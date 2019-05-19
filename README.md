@@ -17,12 +17,9 @@ e.g
 
 array([
        
-       [ 0.,  0.,  0.,  0.],
-       
-       [ 0.,  0.,  0.,  0.],
-       
-       [ 0.,  0.,  0.,  0.],
-       
+       [ 0.,  0.,  0.,  0.],      
+       [ 0.,  0.,  0.,  0.],     
+       [ 0.,  0.,  0.,  0.],     
        [ 0.,  0.,  0.,  0.]])
 
 a[0, 0] = 255
@@ -53,11 +50,12 @@ pixels (x - 1, y) --> numpy.roll(previous, +1, axis=1)
 This method improved considerably the rendering time e.g
 
 method 1
-print(timeit.timeit('ripple_1(cols, rows, previous, current)',
-                       'from __main__ import ripple_1, cols, rows, previous, current', number=10))
+print(timeit.timeit('ripple_1(cols, rows, previous, current)', 'from __main__ import ripple_1, cols, rows, previous, current', number=10))
+
 gives 8.11 seconds with a screen size of 300 x 300 pixels for only 10 iterations (0.811 secs for one iter)
-print(timeit.timeit('ripple_2(previous, current)',
-                        'from __main__ import ripple_2, previous, current', number=1000))
+
+print(timeit.timeit('ripple_2(previous, current)', 'from __main__ import ripple_2, previous, current', number=1000))
+
 gives 2.69 seconds with a screen of 300 x 300 pixels, 1000 iterations (2.6ms for 1 iter)
 
 method 2: Using numpy array manipulation is 300 times faster compare to method 1
