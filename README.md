@@ -14,9 +14,14 @@ for pixels (x, y + 1) we can shift vertically all the values at once instead of 
 by one using the power of numpy array --> numpy.roll(previous, 1, axis=0).
 
 e.g
-array([[ 0.,  0.,  0.,  0.],
+
+array([
        [ 0.,  0.,  0.,  0.],
+       
        [ 0.,  0.,  0.,  0.],
+       
+       [ 0.,  0.,  0.,  0.],
+       
        [ 0.,  0.,  0.,  0.]])
 a[0, 0] = 255
 array([[ 255.,    0.,    0.,    0.],
