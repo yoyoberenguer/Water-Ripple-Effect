@@ -1,3 +1,5 @@
+import random
+
 import pygame
 import numpy
 import timeit
@@ -59,6 +61,10 @@ if __name__ == '__main__':
 
         if keys[pygame.K_PAUSE]:
             PAUSE = True
+
+        rnd = random.randint(0, 1000)
+        if rnd > 500:
+            previous[random.randint(0, rows - 1), random.randint(0, cols - 1)] = random.randint(1000, 5000)
 
         previous, current = ripple_4(previous, current)
 
