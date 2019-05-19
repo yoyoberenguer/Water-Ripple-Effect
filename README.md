@@ -11,7 +11,7 @@ print(timeit.timeit('ripple_1(cols, rows, previous, current)', 'from __main__ im
 
 gives 8.11 seconds with a screen size of 300 x 300 pixels for only 10 iterations (0.811 secs/iter)
 
-# method 2
+method 2
 Instead of going through all the values 300 x 300 with a loop, we can simplify the amount of calculation with
 4 numpy manipulations.
 
@@ -61,7 +61,8 @@ method 3: Same concept than method 2 but we are replacing numpy.roll by our own 
 
 method 4: Is the fastest so far with 1.3 ms/iter.
 
-A multiprocessing method will be implemented soon for rendering the ripple effect on full screen with hopefully a 60 fps. 
+# A multiprocessing method will be implemented soon for rendering the ripple effect on full screen with hopefully 60 fps with surface 
+# distorsion. 
 
 ![alt text](https://github.com/yoyoberenguer/WaterRippleEffect/blob/master/RippleEffect.gif)
 ![alt text](https://github.com/yoyoberenguer/WaterRippleEffect/blob/master/RippleEffect1.gif)
