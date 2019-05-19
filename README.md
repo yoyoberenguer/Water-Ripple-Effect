@@ -8,9 +8,11 @@ method 1: Consist of a going through all elements from the array and performing 
 
 # method 2
 Instead of going through all the values 300 x 300 with a loop, we can simplify the amount of calculation with
-4 numpy manipulations,
+4 numpy manipulations.
+
 for pixels (x, y + 1) we can shift vertically all the values at once instead of going through them one
 by one using the power of numpy array --> numpy.roll(previous, 1, axis=0).
+
 e.g
 array([[ 0.,  0.,  0.,  0.],
        [ 0.,  0.,  0.,  0.],
@@ -26,12 +28,15 @@ array([[   0.,    0.,    0.,    0.],
        [ 255.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.]])
-as you can see the value is shifted to the bottom of the screen
+as you can see the values are shifted to the bottom of the screen.
+
 The same way we can process the pixels (x, y - 1) with numpy.roll(previous, -1, axis=0)
-and son on:
+
 pixels (x + 1, y) --> numpy.roll(previous, -1, axis=1)
 pixels (x - 1, y) --> numpy.roll(previous, +1, axis=1)
+
 This method improved considerably the rendering time e.g
+
 method 1
 print(timeit.timeit('ripple_1(cols, rows, previous, current)',
                        'from __main__ import ripple_1, cols, rows, previous, current', number=10))
