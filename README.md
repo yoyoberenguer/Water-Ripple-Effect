@@ -61,8 +61,8 @@ method 3: Same concept than method 2 but we are replacing numpy.roll by our own 
 
 method 4: Is the fastest so far with 1.3 ms/iter.
 
-A multiprocessing method will be implemented soon for rendering the ripple effect on full screen with hopefully 60 fps with surface 
-distorsion. 
+A multiprocessing method will be implemented soon for rendering the ripple effect with surface distortion on 
+full screen with hopefully 60 fps. 
 
 ![alt text](https://github.com/yoyoberenguer/WaterRippleEffect/blob/master/RippleEffect.gif)
 ![alt text](https://github.com/yoyoberenguer/WaterRippleEffect/blob/master/RippleEffect1.gif)
