@@ -4,7 +4,9 @@ Water ripple effect algorithm with numpy and pygame
 The cython file RippleEffect.pyx contains 3 differents methods for rendering the ripple effects.
 For this demo we are using a screen with dimension 300 x 300 pixels for a reasonable 77 fps 
 
-method 1: Consist of a going through all elements from the array and performing a blur on every adjacent pixels (x + 1, y), (x - 1, y), (x, y - 1), (x, y + 1) of the array (previous). As you can expect with python, this method is extremely slow and not usable for real time rendering of screen over the dimensions 100 x 100 pixels.
+method 1: Consist of a going through all the elements of an array and performing a blur on adjacent pixels like (x + 1, y), (x - 1, y), (x, y - 1), (x, y + 1).
+
+As you can expect with python, this method is extremely slow and not usable for real time rendering with screen dimension over 100 x 100 pixels.
 
 method 1
 print(timeit.timeit('ripple_1(cols, rows, previous, current)', 'from __main__ import ripple_1, cols, rows, previous, current', number=10))
@@ -15,8 +17,7 @@ method 2
 Instead of going through all the values 300 x 300 with a loop, we can simplify the amount of calculation with only
 4 numpy manipulations.
 
-for pixels (x, y + 1) we can shift vertically all the values at once instead of going through them one
-by one using the power of numpy array --> numpy.roll(previous, 1, axis=0).
+for pixels (x, y + 1) we can shift vertically all the values at once instead of going through them one by one using the power of numpy array --> numpy.roll(previous, 1, axis=0).
 
 e.g
 
@@ -45,7 +46,7 @@ array([
        [   0.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.]])
        
-as you can see the values are shifted to the bottom of the screen. And the same way we can process the following pixels:
+as you can see the values are shifted to the bottom of the screen. And the same way we can process the remaining adjacent pixels as follow:
 
 pixels (x, y - 1) with numpy.roll(previous, -1, axis=0)
 pixels (x + 1, y) --> numpy.roll(previous, -1, axis=1)
