@@ -12,7 +12,7 @@ print(timeit.timeit('ripple_1(cols, rows, previous, current)', 'from __main__ im
 gives 8.11 seconds with a screen size of 300 x 300 pixels for only 10 iterations (0.811 secs/iter)
 
 method 2
-Instead of going through all the values 300 x 300 with a loop, we can simplify the amount of calculation with
+Instead of going through all the values 300 x 300 with a loop, we can simplify the amount of calculation with only
 4 numpy manipulations.
 
 for pixels (x, y + 1) we can shift vertically all the values at once instead of going through them one
