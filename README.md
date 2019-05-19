@@ -16,6 +16,7 @@ by one using the power of numpy array --> numpy.roll(previous, 1, axis=0).
 e.g
 
 array([
+       
        [ 0.,  0.,  0.,  0.],
        
        [ 0.,  0.,  0.,  0.],
@@ -23,16 +24,25 @@ array([
        [ 0.,  0.,  0.,  0.],
        
        [ 0.,  0.,  0.,  0.]])
+
 a[0, 0] = 255
-array([[ 255.,    0.,    0.,    0.],
+
+array([
+       
+       [ 255.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.]])
-gives
-array([[   0.,    0.,    0.,    0.],
+       
+gives:
+
+array([
+
+       [   0.,    0.,    0.,    0.],
        [ 255.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.],
        [   0.,    0.,    0.,    0.]])
+       
 as you can see the values are shifted to the bottom of the screen.
 
 The same way we can process the pixels (x, y - 1) with numpy.roll(previous, -1, axis=0)
