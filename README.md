@@ -5,15 +5,18 @@ The pyx file RippleEffect contains 3 differents methods for rendering the ripple
 
 For this demo we are using a screen with dimension 300 x 300 pixels to get a reasonable 77 fps 
 
-method 1: Consist of a loop going through all the elements of an array and performing a blur on adjacent pixels like (x + 1, y), (x - 1, y), (x, y - 1), (x, y + 1).
+method 1:
+
+Consist of a loop going through all the elements of an array and performing a blur on adjacent pixels like (x + 1, y), (x - 1, y), (x, y - 1), (x, y + 1).
 
 As you can expect with python, this method is extremely slow and not usable for real time rendering with screen dimension over 100 x 100 pixels.
 
 The processing time is around 8.11 seconds with a screen size of 300 x 300 pixels with only 10 iterations (0.811 secs/iteration)
 
-method 2
+method 2:
+
 Instead of going through all the values 300 x 300 within a loop, we can simplify the amount of calculation with only
-4 numpy array manipulations.
+4 numpy array manipulation.
 
 for pixels (x, y + 1), we can shift vertically all the values at once instead of going through them one by one --> numpy.roll(previous, 1, axis=0).
 
