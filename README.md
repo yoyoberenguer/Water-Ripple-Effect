@@ -7,7 +7,7 @@ For this demo we are using a screen with dimension 300 x 300 pixels to get a rea
 
 method 1:
 
-Consist of a loop going through all the elements of an array and performing a blur on adjacent pixels like (x + 1, y), (x - 1, y), (x, y - 1), (x, y + 1).
+Iterating over an array and performing a blur on adjacent pixels like (x + 1, y), (x - 1, y), (x, y - 1), (x, y + 1).
 
 As you can expect with python, this method is extremely slow and not usable for real time rendering with screen dimension over 100 x 100 pixels.
 
