@@ -52,7 +52,9 @@ as you can see the values are shifted to the bottom of the screen.
 The same way we can process the remaining adjacent pixels as follow:
 
 pixels (x, y - 1) with numpy.roll(previous, -1, axis=0)
+
 pixels (x + 1, y) --> numpy.roll(previous, -1, axis=1)
+
 pixels (x - 1, y) --> numpy.roll(previous, +1, axis=1)
 
 The processing time is around 2.69 seconds with a screen of 300 x 300 pixels for 1000 iterations (2.6ms/iteration)
