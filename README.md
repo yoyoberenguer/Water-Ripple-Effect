@@ -1,7 +1,7 @@
 # WaterRippleEffect
 Water ripple effect algorithm with numpy and pygame
 
-The pyx file RippleEffect contains 3 differents methods for rendering the ripple effects.
+The pyx file RippleEffect contains 3 different methods for rendering the ripple effects.
 
 For this demo we are using a screen with dimension 300 x 300 pixels to get a reasonable 77 fps 
 
