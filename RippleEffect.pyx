@@ -8,7 +8,8 @@ dampening = 0.97 # 0.97
 
 
 # method 1
-# This method is too slow.
+# Slow method with python, works fine with language C 
+# and Java.
 def ripple_1(cols_, rows_):
     global previous, current
     for i in range(1, cols_ - 1):
