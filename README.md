@@ -10,6 +10,7 @@ in mind that the animation speed will ne impacted by the screen dimensions.
 1. Iterating method 
 
    Description : Iterating over all pixels values width x height and performing a blur on adjacent pixels
+   
    Result : Slow method and not usable for real time rendering with python with screen dimension above 100 x 100 pixels!.
    However this method works fine with C or Java.
    
@@ -17,7 +18,7 @@ in mind that the animation speed will ne impacted by the screen dimensions.
 2. Numpy arrays
 
    Description : Instead of going through all the pixels values inside a loop and applying a blur for each pixels, 
-   my trick is to call separately the method numpy.roll for all directions (up, down, left, right) and make the sum of all 4 numpy          arrays providing a blur effect in only 4 operations using convolution properties.  
+   my trick is to call separately the method numpy.roll for all directions (up, down, left, right) and make the sum of all 4 numpy            arrays providing a blur effect in only 4 operations using convolution properties.  
    
    pixels             | numpy                            |   convolution direction 
    -------------------|----------------------------------|------------------------
