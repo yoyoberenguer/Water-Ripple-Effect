@@ -1,73 +1,32 @@
 # Water ripple effect
 
-### Water ripple effect algorithm with numpy and pygame
+### Water ripple effect with fast python algorithm using numpy and pygame.
 
-The pyx file RippleEffect contains 3 different methods for rendering the ripple effects.
-For this demo we are using a screen with dimension 300 x 300 pixels to get a reasonable 77 fps 
+This Demo contains 2 different rendering methods.
+The pygame display is set to 300 x 300 pixels for the presentation but those values can be adjusted at your convenience, bare
+in mind that the animation speed will ne impacted by the screen dimensions.
 
-1. Iterating method
+#### First method 
+1. Iterating method 
 
-   Iterating over an array and performing a blur on adjacent pixels like :
+   Description : Iterating over all pixels values width x height and performing a blur on adjacent pixels
+   Result : Slow method and not usable for real time rendering with python with screen dimension above 100 x 100 pixels!.
+   However this method works fine with C or Java.
+   
+#### Second method
+2. Numpy arrays
 
-    pixel left | pixel right | pixel up   | down | 
-   ------------|-------------|------------|------|
-   (x + 1, y)  | (x - 1, y)  | (x, y - 1) | (x, y + 1)
+   Description : Instead of going through all the pixels values inside a loop and applying a blur for each pixels, 
+   my trick is to call separately the method numpy.roll for all directions (up, down, left, right) and make the sum of all 4 numpy          arrays providing a blur effect in only 4 operations using convolution properties.  
+   
+   pixels             | numpy                            |   convolution direction 
+   -------------------|----------------------------------|------------------------
+   (x, y + 1)         | numpy.roll(previous, +1, axis=0) |    down pass
+   (x, y - 1)         | numpy.roll(previous, -1, axis=0) |    up pass
+   (x + 1, y)         | numpy.roll(previous, -1, axis=1) |    left pass
+   (x - 1, y)         | numpy.roll(previous, +1, axis=1) |    right pass
 
-   As you can expect with python, this method is extremely slow and not usable for real time rendering with screen 
-   dimension over 100 x 100 pixels!.
-
-2. Numpy 
-
-   Instead of going through all the values (300 x 300) within a loop, we can simplify the amount of calculation with only
-   4 numpy array manipulation instead.
-
-   For pixels (x, y + 1), we can shift vertically all the values at once instead of going through them one by one such as      
-   numpy.roll(previous, 1, axis=0).
-
-   ```
-   e.g
-
-   array([
-
-          [ 0.,  0.,  0.,  0.],      
-          [ 0.,  0.,  0.,  0.],     
-          [ 0.,  0.,  0.,  0.],     
-          [ 0.,  0.,  0.,  0.]])
-
-   a[0, 0] = 255
-
-   array([
-
-          [ 255.,    0.,    0.,    0.],
-          [   0.,    0.,    0.,    0.],
-          [   0.,    0.,    0.,    0.],
-          [   0.,    0.,    0.,    0.]])
-
-   numpy.roll(a, 1, axis=0).
-
-   array([
-
-          [   0.,    0.,    0.,    0.],
-          [ 255.,    0.,    0.,    0.],
-          [   0.,    0.,    0.,    0.],
-          [   0.,    0.,    0.,    0.]])
-   ```
-
-   as you can see the values are shifted to the bottom of the screen. 
-
-
-   pixels             | numpy 
-   -------------------|-----------------------------------
-   (x, y + 1)         | numpy.roll(previous, +1, axis=0)
-   (x, y - 1)         | numpy.roll(previous, -1, axis=0)
-   (x + 1, y)         | numpy.roll(previous, -1, axis=1)
-   (x - 1, y)         | numpy.roll(previous, +1, axis=1)
-
-   Using numpy array manipulation is 300 times faster than method 1
-
-3. Same concept than method 2 but we are replacing numpy.roll by our own version to increase the speed around 1.36ms
-
-4. Is the fastest so far with 1.3 ms/iter.
+   Result : Using numpy array manipulation is 300 times faster than method 1
 
 _A multiprocessing method will be implemented soon for rendering the ripple effect with surface distortion on 
 full screen with hopefully 60 fps._ 
