@@ -12,7 +12,7 @@ import numpy
 from numpy import *
 import sys
 
-dampening = 0.8
+dampening = 0.9
 
 
 def new_(cols_, rows_, previous, current):
@@ -74,34 +74,28 @@ def shift_horiz_neg(arr, num, fill_value=0):
     return result
 
 
-# method 3
 def new__(previous, current):
 
-    ii = 0
     a = ax.copy()
     b = ay.copy()
     data = (shift_vert_pos(previous, 1) + shift_vert_neg(previous, -1) +
             shift_horiz_pos(previous, 1) + shift_horiz_neg(previous, -1)) / 2
 
     data -= current
-    # data *= dampening
-    data -= data / 16
+    data *= dampening
     current = data
-    data = 1 - data/1024
+    data = 1 - data / 1024
 
-    a = a * data + rows2
-    # b = b * data + cols2
-    a /= (width - 1)
-    # b /= (height - 1)
-    b = numpy.rot90(a.copy())   # only if width and height are equals else uncomment b lines
-    c = numpy.dstack((a % width, b % height)).astype(numpy.uint8)
+    a = (a * data + w2) / width
+    b = (b * data + h2) / height
 
+    c = numpy.dstack((a, b)).astype(numpy.uint8)
+    numpy.putmask(c, c > width - 1, width - 1)
     # todo vectorised below
-    for i in range(height - 1):
-        for j in range(width - 1):
+    for i in range(0, height - 1):
+        for j in range(0, width - 1):
             if data[i, j] != 1:
                 background.set_at((i, j), texture.get_at(c[i, j]))
-    ii += 1
 
     temp = previous
     previous = current
@@ -113,13 +107,13 @@ if __name__ == '__main__':
 
     numpy.set_printoptions(threshold=sys.maxsize)
     MAXFPS = 80
-    height = 200
-    width = 200
-    rows2 = width // 2
-    cols2 = height // 2
+    height = 150
+    width = 150
+    w2 = width // 2
+    h2 = height // 2
     SCREENRECT = pygame.Rect(0, 0, height, width)
     pygame.display.init()
-    SCREEN = pygame.display.set_mode(SCREENRECT.size, pygame.HWSURFACE, 32)
+    SCREEN = pygame.display.set_mode(SCREENRECT.size, pygame.FULLSCREEN | pygame.HWSURFACE, 32)
     SCREEN.set_alpha(None)
     pygame.init()
 
@@ -135,16 +129,10 @@ if __name__ == '__main__':
     ii = 0
     for i in range(height):
         for j in range(width):
-            # print(ii - rows2)
-            ax[i, j] = (ii - rows2)
+            ax[i, j] = ii - w2
             ii += 1
 
-    ay = numpy.zeros((width, height))
-    ii = 0
-    for i in range(height):
-        for j in range(width):
-            ay[j, i] = (ii - cols2)
-            ii += 1
+    ay = numpy.rot90(ax)
 
     clock = pygame.time.Clock()
     TIME_PASSED_SECONDS = clock.tick(MAXFPS)
@@ -157,7 +145,7 @@ if __name__ == '__main__':
 
     background = texture.copy()
 
-    current = numpy.zeros((height, width), dtype=numpy.float64)
+    current = numpy.zeros((height, width), dtype=numpy.float)
     previous = current.copy()
 
     while not STOP_GAME:
@@ -169,7 +157,7 @@ if __name__ == '__main__':
             if event.type == pygame.MOUSEMOTION:
                 mouse_pos = pygame.math.Vector2(pygame.mouse.get_pos())
 
-                previous[int(mouse_pos.x), int(mouse_pos.y)] = 1024
+                previous[int(mouse_pos.x % width), int(mouse_pos.y % height)] = 1024
 
         if keys[pygame.K_ESCAPE]:
             STOP_GAME = True
@@ -181,12 +169,12 @@ if __name__ == '__main__':
             PAUSE = True
 
         rnd = random.randint(0, 1000)
-        if rnd > 800:
+        if rnd > 700:
             previous[random.randint(0, width - 1), random.randint(0, height - 1)] = 1024  # random.randint(512, 1024)
-            # previous[rows2, cols2] = 1024
+            # previous[width//2, height//2] = 1024
 
-        previous, current = new__(previous, current)
-        # previous, current = new_(cols, rows, previous, current)
+        previous, current = new__(previous, current)               # --> numpy array
+        # previous, current = new_(cols, rows, previous, current)  #  --> loop over every pixels
 
         SCREEN.blit(background, (0, 0))
 
