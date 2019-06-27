@@ -107,13 +107,13 @@ if __name__ == '__main__':
 
     numpy.set_printoptions(threshold=sys.maxsize)
     MAXFPS = 80
-    height = 300
-    width = 300
+    height = 150
+    width = 150
     w2 = width // 2
     h2 = height // 2
     SCREENRECT = pygame.Rect(0, 0, height, width)
     pygame.display.init()
-    SCREEN = pygame.display.set_mode(SCREENRECT.size, pygame.HWSURFACE, 32)
+    SCREEN = pygame.display.set_mode(SCREENRECT.size, pygame.FULLSCREEN | pygame.HWSURFACE, 32)
     SCREEN.set_alpha(None)
     pygame.init()
 
