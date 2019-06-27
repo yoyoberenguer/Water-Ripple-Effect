@@ -28,6 +28,8 @@ in mind that the animation speed will ne impacted by the screen dimensions.
    (x - 1, y)         | numpy.roll(previous, +1, axis=1) |    right pass
 
    Result : Using numpy array manipulation is 300 times faster than method 1
+   
+File ripple_effect_distortion.py to see texture distortion and ripple effect.
 
 _A multiprocessing method will be implemented soon for rendering the ripple effect with surface distortion on 
 full screen with hopefully 60 fps._ 
