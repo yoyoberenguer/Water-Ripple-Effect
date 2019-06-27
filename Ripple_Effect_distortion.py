@@ -89,7 +89,7 @@ def new__(previous, current):
     a = (a * data + w2) / width
     b = (b * data + h2) / height
 
-    c = numpy.dstack((a, b)).astype(numpy.uint8)
+    c = numpy.dstack((a, b)).astype(numpy.int)
     numpy.putmask(c, c > width - 1, width - 1)
     # todo vectorised below
     for i in range(0, height - 1):
@@ -107,13 +107,13 @@ if __name__ == '__main__':
 
     numpy.set_printoptions(threshold=sys.maxsize)
     MAXFPS = 80
-    height = 150
-    width = 150
+    height = 300
+    width = 300
     w2 = width // 2
     h2 = height // 2
     SCREENRECT = pygame.Rect(0, 0, height, width)
     pygame.display.init()
-    SCREEN = pygame.display.set_mode(SCREENRECT.size, pygame.FULLSCREEN | pygame.HWSURFACE, 32)
+    SCREEN = pygame.display.set_mode(SCREENRECT.size, pygame.HWSURFACE, 32)
     SCREEN.set_alpha(None)
     pygame.init()
 
