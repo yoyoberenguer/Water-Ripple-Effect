@@ -10,16 +10,16 @@ from RippleEffect import *
 if __name__ == '__main__':
 
     MAXFPS = 80
-    cols = 300
-    rows = 300
-    SCREENRECT = pygame.Rect(0, 0, cols, rows)
+    cols = 500
+    rows = 500
+    SCREENRECT = pygame.Rect(0, 0, rows, cols)
     pygame.display.init()
-    SCREEN = pygame.display.set_mode(SCREENRECT.size, pygame.HWSURFACE, 32)
+    SCREEN = pygame.display.set_mode(SCREENRECT.size, pygame.FULLSCREEN | pygame.HWSURFACE, 32)
     SCREEN.set_alpha(None)
     pygame.init()
 
     background = pygame.image.load('Assets\\background.jpg').convert()
-    background = pygame.transform.smoothscale(background, (cols, rows))
+    background = pygame.transform.smoothscale(background, (rows, cols))
     background.set_alpha(None)
 
     clock = pygame.time.Clock()
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     STOP_GAME = False
     PAUSE = False
 
-    current = numpy.zeros((cols, rows), dtype=numpy.uint8)
+    current = numpy.zeros((cols, rows), dtype=numpy.float)
     previous = current.copy()
 
     bck_array = pygame.surfarray.array3d(background)
@@ -51,7 +51,7 @@ if __name__ == '__main__':
             if event.type == pygame.MOUSEMOTION:  # pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.math.Vector2(pygame.mouse.get_pos())
                 # current[int(mouse_pos.x), int(mouse_pos.y)] = 5000
-                previous[int(mouse_pos.x), int(mouse_pos.y)] = 5000
+                previous[int(mouse_pos.x % rows), int(mouse_pos.y % cols)] = 5000
 
         if keys[pygame.K_ESCAPE]:
             STOP_GAME = True
@@ -96,7 +96,7 @@ if __name__ == '__main__':
         # surface = Surface(current, cols, rows, bck_array)
         # pygame.surfarray.blit_array(SCREEN, surface)
 
-        SCREEN.blit(background, (0, 0), special_flags=pygame.BLEND_RGB_ADD)
+        #SCREEN.blit(background, (0, 0), special_flags=pygame.BLEND_RGB_ADD)
 
         # Cap the speed at 60 FPS
         TIME_PASSED_SECONDS = clock.tick(MAXFPS)
