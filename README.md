@@ -7,17 +7,22 @@ This Demo contains 2 different rendering methods.
 #### First method 
 1. Iterating method 
 
-   Description : Iterating over all pixels values width x height and performing a blur on adjacent pixels
+   Description : Iterating over all pixels values width x height and performing a blur on 
+   adjacent pixels
    
-   Result : Slow method and not usable for real time rendering with python with screen dimension above 100 x 100 pixels!.
+   Result : Slow method and not usable for real time rendering with python with screen 
+   dimension above 100 x 100 pixels!.
    This method works fine with the cython over 600 x 600 pixels
 
 #### Second method
 2. Numpy arrays
 
 
-   Description : Instead of going through all the pixels values inside a loop and applying a blur for each pixels, 
-   my trick is to call separately the method numpy.roll for all directions (up, down, left, right) and make the sum of all 4 numpy            arrays providing the equivalent of blur effect for each surface pixels in only takes 4 operations using convolution properties.  
+   Description : Instead of going through all the pixels values inside a loop and applying 
+   a blur for each pixels, my trick is to call separately the method numpy.roll for all 
+   directions (up, down, left, right) and make the sum of all 4 numpy arrays providing the
+   equivalent of blur effect for each surface pixels in only takes 4 operations using 
+   convolution properties.  
    
    pixels             | numpy                            |   convolution direction 
    -------------------|----------------------------------|------------------------
