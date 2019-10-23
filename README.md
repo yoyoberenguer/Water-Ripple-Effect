@@ -21,8 +21,7 @@ This Demo contains 2 different rendering methods.
    Description : Instead of going through all the pixels values inside a loop and applying 
    a blur for each pixels, my trick is to call separately the method numpy.roll for all 
    directions (up, down, left, right) and make the sum of all 4 numpy arrays providing the
-   equivalent of blur effect for each surface pixels in only takes 4 operations using 
-   convolution properties.  
+   equivalent of blur effect for each surface pixels in only 4 operations. 
    
    pixels             | numpy                            |   convolution direction 
    -------------------|----------------------------------|------------------------
