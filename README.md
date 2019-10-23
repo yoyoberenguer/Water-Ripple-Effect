@@ -37,3 +37,12 @@ This Demo contains 2 different rendering methods.
 ```
 ![alt text](https://github.com/yoyoberenguer/WaterRippleEffect/blob/master/RippleEffect.gif)
 ![alt text](https://github.com/yoyoberenguer/WaterRippleEffect/blob/master/RippleEffect1.gif)
+
+#### Requirment 
+- Pygame (pip install pygame)
+- Numpy (pip install numpy)
+- Cython (refer to a tutorial to see how to install cython and a compiler)
+
+### Build cython code
+C:\>python setup_RippleEffect build_ext --inplace
+
