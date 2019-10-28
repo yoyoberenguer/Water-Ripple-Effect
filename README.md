@@ -32,7 +32,7 @@ This Demo contains 2 different rendering methods.
 
    Result : Using numpy array manipulation is 300 times faster than method 1 using pure python.
       
-Discover Cython version into the folder Cython and CythonOpenMP (Cython and OpenMP, multiprocessing).
+Discover Cython version into the folder Cython and CythonOpenMP (multiprocessing).
 100 FPS for a screen 600 x 600 with water ripple effect and background distortion.
 
 #### Requirement 
