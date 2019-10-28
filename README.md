@@ -31,13 +31,11 @@ This Demo contains 2 different rendering methods.
    (x - 1, y)         | numpy.roll(previous, +1, axis=1) |    right pass
 
    Result : Using numpy array manipulation is 300 times faster than method 1 using pure python.
-   With cython the performance is slightly better
-   
-```
-![alt text](https://github.com/yoyoberenguer/WaterRippleEffect/blob/master/RippleEffect.gif)
-![alt text](https://github.com/yoyoberenguer/WaterRippleEffect/blob/master/RippleEffect1.gif)
+      
+Discover Cython version into the folder Cython and CythonOpenMP (Cython and OpenMP, multiprocessing).
+100 FPS for a screen 600 x 600 with water ripple effect and background distortion.
 
-#### Requirment 
+#### Requirement 
 - Pygame (pip install pygame)
 - Numpy (pip install numpy)
 - Cython (refer to a tutorial to see how to install cython and a compiler)
@@ -46,3 +44,4 @@ This Demo contains 2 different rendering methods.
 C:\>python setup_RippleEffect.py build_ext --inplace
 
 When python has been compiled, run the program main_RippleEffect.py from your favorite python IDE 
+```
