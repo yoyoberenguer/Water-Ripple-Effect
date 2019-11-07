@@ -47,4 +47,4 @@ When python has been compiled, run the program main_RippleEffect.py from your fa
 ```
 
 
-![alt text](https://github.com/yoyoberenguer/Plasma-Effect/blob/master/sc1.png) 
+![alt text](https://github.com/yoyoberenguer/Water-Ripple-Effect/blob/master/sc3.png) 
