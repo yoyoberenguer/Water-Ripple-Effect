@@ -43,7 +43,10 @@ Discover Cython version into the folder Cython and CythonOpenMP (multiprocessing
 ### Build cython code
 C:\>python setup_RippleEffect.py build_ext --inplace
 
-When python has been compiled, run the program main_RippleEffect.py from your favorite python IDE 
+When python has been compiled, run the program main_RippleEffect.py from your favorite python IDE.
+
+Or run the demo executable where the fodler Asset has been copied:
+C:\>demo.exe
 ```
 
 
