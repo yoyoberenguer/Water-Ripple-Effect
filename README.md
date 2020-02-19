@@ -5,8 +5,9 @@ This page contains 3 different rendering methods.
 1) Pure Python 
 2) Cython Version 
 3) OpenMP Version
-
+```
 ## Pure Python 
+```
 In the pure python method I am using two different techniques
 1. Iterating method 
 
@@ -32,18 +33,21 @@ In the pure python method I am using two different techniques
    (x - 1, y)         | numpy.roll(previous, +1, axis=1) |    right pass
 
    Result : Using numpy array manipulation is 300 times faster than method 1 using pure python.
-   
+```
 ### Cython and OpenMP rendering     
+```
 Discover Cython version into the folder Cython and CythonOpenMP (multiprocessing).
 100 FPS for a screen 600 x 600 with water ripple effect and background distortion.
-
+```
 ### Requirement 
+```
 - Pygame (pip install pygame)
 - Numpy (pip install numpy)
 - Cython (refer to a tutorial to see how to install cython)
 - Mingw32/Cygwin or Microsoft Visual Studio (compatible with your python version)
-
+```
 ### Build cython code
+```
 C:\>python setup_RippleEffect.py build_ext --inplace
 
 When python has been compiled, run the program main_RippleEffect.py from your favorite python IDE.
