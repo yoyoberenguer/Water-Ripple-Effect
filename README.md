@@ -1,10 +1,13 @@
 # Water ripple effect
-
-### Water ripple effect
 ```
-This Demo contains 2 different rendering methods.
+This page contains 3 different rendering methods.
 
-#### First method 
+1) Pure Python 
+2) Cython Version 
+3) OpenMP Version
+
+## Pure Python 
+In the pure python method I am using two different techniques
 1. Iterating method 
 
    Description : Iterating over all pixels values width x height and performing a blur on 
@@ -12,9 +15,7 @@ This Demo contains 2 different rendering methods.
    
    Result : Slow method and not usable for real time rendering with python with screen 
    dimension above 100 x 100 pixels!.
-   This method works fine with the cython over 600 x 600 pixels
 
-#### Second method
 2. Numpy arrays
 
 
@@ -31,14 +32,16 @@ This Demo contains 2 different rendering methods.
    (x - 1, y)         | numpy.roll(previous, +1, axis=1) |    right pass
 
    Result : Using numpy array manipulation is 300 times faster than method 1 using pure python.
-      
+   
+### Cython and OpenMP rendering     
 Discover Cython version into the folder Cython and CythonOpenMP (multiprocessing).
 100 FPS for a screen 600 x 600 with water ripple effect and background distortion.
 
-#### Requirement 
+### Requirement 
 - Pygame (pip install pygame)
 - Numpy (pip install numpy)
-- Cython (refer to a tutorial to see how to install cython and a compiler)
+- Cython (refer to a tutorial to see how to install cython)
+- Mingw32/Cygwin or Microsoft Visual Studio (compatible with your python version)
 
 ### Build cython code
 C:\>python setup_RippleEffect.py build_ext --inplace
