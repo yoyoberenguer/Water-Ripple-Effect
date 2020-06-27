@@ -37,36 +37,36 @@ In the pure python method I am using two different techniques
    
 ```
 
-### Cython and OpenMP rendering     
+## Cython and OpenMP rendering     
 
 ```
 Discover Cython version into the folder Cython and CythonOpenMP (multiprocessing).
 100 FPS for a screen 600 x 600 with water ripple effect and background distortion.
 ```
 
-### Requirement 
+   ### Requirement 
 
-```
-- Pygame 3 (pip install pygame)
-- Numpy    (pip install numpy)
-- Cython   (refer to a tutorial to see how to install cython)
-- A compiler such visual studio, MSVC, CGYWIN setup correctly
-  on your system.
-  - a C compiler for windows (Visual Studio, MinGW etc) install on your system 
-  and linked to your windows environment.
-  Note that some adjustment might be needed once a compiler is install on your system, 
-  refer to external documentation or tutorial in order to setup this process.
-  e.g https://devblogs.microsoft.com/python/unable-to-find-vcvarsall-bat/
+   ```
+   - Pygame 3 (pip install pygame)
+   - Numpy    (pip install numpy)
+   - Cython   (refer to a tutorial to see how to install cython)
+   - A compiler such visual studio, MSVC, CGYWIN setup correctly
+     on your system.
+     - a C compiler for windows (Visual Studio, MinGW etc) install on your system 
+     and linked to your windows environment.
+     Note that some adjustment might be needed once a compiler is install on your system, 
+     refer to external documentation or tutorial in order to setup this process.
+     e.g https://devblogs.microsoft.com/python/unable-to-find-vcvarsall-bat/
 
-```
-### Build cython code
-```
-C:\>python setup_RippleEffect.py build_ext --inplace
+   ```
+   ### Build cython code
+   ```
+   C:\>python setup_RippleEffect.py build_ext --inplace
 
-When python has been compiled, run the program main_RippleEffect.py from your favorite python IDE.
+   When python has been compiled, run the program main_RippleEffect.py from your favorite python IDE.
 
-Or run the demo executable where the fodler Asset has been copied:
-C:\>demo.exe
-```
+   Or run the demo executable where the fodler Asset has been copied:
+   C:\>demo.exe
+   ```
 
 ![alt text](https://github.com/yoyoberenguer/Water-Ripple-Effect/blob/master/sc3.png) 
