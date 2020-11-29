@@ -524,6 +524,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #include <stdio.h>
 #include "numpy/arrayobject.h"
 #include "numpy/ufuncobject.h"
+#include <math.h>
 #include "pythread.h"
 #include <stdlib.h>
 #include "pystate.h"
@@ -2001,6 +2002,8 @@ static PyTypeObject *__pyx_ptype_5numpy_ndarray = 0;
 static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *, char *, char *, int *); /*proto*/
 
+/* Module declarations from 'libc.math' */
+
 /* Module declarations from 'RippleEffect' */
 static PyTypeObject *__pyx_array_type = 0;
 static PyTypeObject *__pyx_MemviewEnum_type = 0;
@@ -2391,7 +2394,7 @@ static PyObject *__pyx_codeobj__30;
 static PyObject *__pyx_codeobj__32;
 static PyObject *__pyx_codeobj__39;
 
-/* "RippleEffect.pyx":20
+/* "RippleEffect.pyx":21
  * # This method loop over all the pixels.
  * 
  * def new_(cols_: int, rows_:int, previous: ndarray, current: ndarray,             # <<<<<<<<<<<<<<
@@ -2444,35 +2447,35 @@ static PyObject *__pyx_pw_12RippleEffect_1new_(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_rows)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 1); __PYX_ERR(0, 20, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 1); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_previous)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 2); __PYX_ERR(0, 20, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 2); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_current)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 3); __PYX_ERR(0, 20, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 3); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_texture_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 4); __PYX_ERR(0, 20, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 4); __PYX_ERR(0, 21, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_background_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 5); __PYX_ERR(0, 20, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, 5); __PYX_ERR(0, 21, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "new_") < 0)) __PYX_ERR(0, 20, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "new_") < 0)) __PYX_ERR(0, 21, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -2493,7 +2496,7 @@ static PyObject *__pyx_pw_12RippleEffect_1new_(PyObject *__pyx_self, PyObject *_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 20, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("new_", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 21, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("RippleEffect.new_", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2518,7 +2521,7 @@ static PyObject *__pyx_pf_12RippleEffect_new_(CYTHON_UNUSED PyObject *__pyx_self
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("new_", 0);
 
-  /* "RippleEffect.pyx":34
+  /* "RippleEffect.pyx":35
  *     """
  * 
  *     return new_c(cols_, rows_, previous, current,             # <<<<<<<<<<<<<<
@@ -2526,14 +2529,14 @@ static PyObject *__pyx_pf_12RippleEffect_new_(CYTHON_UNUSED PyObject *__pyx_self
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_cols_); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 34, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_rows_); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_cols_); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_rows_); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
   __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_float(__pyx_v_previous);
-  if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(0, 34, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(0, 35, __pyx_L1_error)
   __pyx_t_4 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_float(__pyx_v_current);
-  if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 34, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 35, __pyx_L1_error)
 
-  /* "RippleEffect.pyx":35
+  /* "RippleEffect.pyx":36
  * 
  *     return new_c(cols_, rows_, previous, current,
  *                  texture_array, background_array)             # <<<<<<<<<<<<<<
@@ -2541,18 +2544,18 @@ static PyObject *__pyx_pf_12RippleEffect_new_(CYTHON_UNUSED PyObject *__pyx_self
  * @cython.boundscheck(False)
  */
   __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_unsigned_char(__pyx_v_texture_array);
-  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 35, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 36, __pyx_L1_error)
   __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_unsigned_char(__pyx_v_background_array);
-  if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 35, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(0, 36, __pyx_L1_error)
 
-  /* "RippleEffect.pyx":34
+  /* "RippleEffect.pyx":35
  *     """
  * 
  *     return new_c(cols_, rows_, previous, current,             # <<<<<<<<<<<<<<
  *                  texture_array, background_array)
  * 
  */
-  __pyx_t_7 = __pyx_f_12RippleEffect_new_c(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_7 = __pyx_f_12RippleEffect_new_c(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __PYX_XDEC_MEMVIEW(&__pyx_t_3, 1);
   __pyx_t_3.memview = NULL;
@@ -2570,7 +2573,7 @@ static PyObject *__pyx_pf_12RippleEffect_new_(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_t_7 = 0;
   goto __pyx_L0;
 
-  /* "RippleEffect.pyx":20
+  /* "RippleEffect.pyx":21
  * # This method loop over all the pixels.
  * 
  * def new_(cols_: int, rows_:int, previous: ndarray, current: ndarray,             # <<<<<<<<<<<<<<
@@ -2593,7 +2596,7 @@ static PyObject *__pyx_pf_12RippleEffect_new_(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "RippleEffect.pyx":41
+/* "RippleEffect.pyx":42
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef inline new_c(int cols_, int rows_,             # <<<<<<<<<<<<<<
@@ -2664,7 +2667,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
   PyObject *__pyx_t_48 = NULL;
   __Pyx_RefNannySetupContext("new_c", 0);
 
-  /* "RippleEffect.pyx":49
+  /* "RippleEffect.pyx":50
  * 
  *     cdef:
  *         float cols2 = cols_ >> 1             # <<<<<<<<<<<<<<
@@ -2673,7 +2676,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
  */
   __pyx_v_cols2 = (__pyx_v_cols_ >> 1);
 
-  /* "RippleEffect.pyx":50
+  /* "RippleEffect.pyx":51
  *     cdef:
  *         float cols2 = cols_ >> 1
  *         float rows2 = rows_ >> 1             # <<<<<<<<<<<<<<
@@ -2682,7 +2685,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
  */
   __pyx_v_rows2 = (__pyx_v_rows_ >> 1);
 
-  /* "RippleEffect.pyx":52
+  /* "RippleEffect.pyx":53
  *         float rows2 = rows_ >> 1
  *         int i, j, a, b
  *         int cols_1 = cols_ - 1             # <<<<<<<<<<<<<<
@@ -2691,18 +2694,18 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
  */
   __pyx_v_cols_1 = (__pyx_v_cols_ - 1);
 
-  /* "RippleEffect.pyx":53
+  /* "RippleEffect.pyx":54
  *         int i, j, a, b
  *         int cols_1 = cols_ - 1
  *         int rows_1 = rows_ - 1             # <<<<<<<<<<<<<<
  *         float data
- *         float [:, :] temp
+ *         float c1 = 1.0 / 1024.0
  */
   __pyx_v_rows_1 = (__pyx_v_rows_ - 1);
 
   /* "RippleEffect.pyx":56
+ *         int rows_1 = rows_ - 1
  *         float data
- *         float [:, :] temp
  *         float c1 = 1.0 / 1024.0             # <<<<<<<<<<<<<<
  * 
  *     # from 1 to w - 1 to avoid python wraparound error
@@ -2713,7 +2716,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
  *     # from 1 to w - 1 to avoid python wraparound error
  *     # same for j (1 to h - 1)
  *     with nogil:             # <<<<<<<<<<<<<<
- *         for j in prange(1, cols_1):  # , schedule='static', chunksize=30):
+ *         for j in prange(1, cols_1, schedule='static', num_threads=8):
  *             for i in range(1, rows_1):
  */
   {
@@ -2727,7 +2730,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
         /* "RippleEffect.pyx":61
  *     # same for j (1 to h - 1)
  *     with nogil:
- *         for j in prange(1, cols_1):  # , schedule='static', chunksize=30):             # <<<<<<<<<<<<<<
+ *         for j in prange(1, cols_1, schedule='static', num_threads=8):             # <<<<<<<<<<<<<<
  *             for i in range(1, rows_1):
  * 
  */
@@ -2744,11 +2747,11 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
             if (__pyx_t_3 > 0)
             {
                 #ifdef _OPENMP
-                #pragma omp parallel private(__pyx_t_10, __pyx_t_11, __pyx_t_12, __pyx_t_13, __pyx_t_14, __pyx_t_15, __pyx_t_16, __pyx_t_17, __pyx_t_18, __pyx_t_19, __pyx_t_20, __pyx_t_21, __pyx_t_22, __pyx_t_23, __pyx_t_24, __pyx_t_25, __pyx_t_26, __pyx_t_27, __pyx_t_28, __pyx_t_29, __pyx_t_30, __pyx_t_31, __pyx_t_32, __pyx_t_33, __pyx_t_34, __pyx_t_35, __pyx_t_36, __pyx_t_37, __pyx_t_38, __pyx_t_39, __pyx_t_4, __pyx_t_40, __pyx_t_41, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8, __pyx_t_9)
+                #pragma omp parallel num_threads(8) private(__pyx_t_10, __pyx_t_11, __pyx_t_12, __pyx_t_13, __pyx_t_14, __pyx_t_15, __pyx_t_16, __pyx_t_17, __pyx_t_18, __pyx_t_19, __pyx_t_20, __pyx_t_21, __pyx_t_22, __pyx_t_23, __pyx_t_24, __pyx_t_25, __pyx_t_26, __pyx_t_27, __pyx_t_28, __pyx_t_29, __pyx_t_30, __pyx_t_31, __pyx_t_32, __pyx_t_33, __pyx_t_34, __pyx_t_35, __pyx_t_36, __pyx_t_37, __pyx_t_38, __pyx_t_39, __pyx_t_4, __pyx_t_40, __pyx_t_41, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8, __pyx_t_9)
                 #endif /* _OPENMP */
                 {
                     #ifdef _OPENMP
-                    #pragma omp for lastprivate(__pyx_v_a) lastprivate(__pyx_v_b) lastprivate(__pyx_v_data) lastprivate(__pyx_v_i) firstprivate(__pyx_v_j) lastprivate(__pyx_v_j)
+                    #pragma omp for lastprivate(__pyx_v_a) lastprivate(__pyx_v_b) lastprivate(__pyx_v_data) lastprivate(__pyx_v_i) firstprivate(__pyx_v_j) lastprivate(__pyx_v_j) schedule(static)
                     #endif /* _OPENMP */
                     for (__pyx_t_2 = 0; __pyx_t_2 < __pyx_t_3; __pyx_t_2++){
                         {
@@ -2761,7 +2764,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
 
                             /* "RippleEffect.pyx":62
  *     with nogil:
- *         for j in prange(1, cols_1):  # , schedule='static', chunksize=30):
+ *         for j in prange(1, cols_1, schedule='static', num_threads=8):
  *             for i in range(1, rows_1):             # <<<<<<<<<<<<<<
  * 
  *                 data = (previous[i + 1, j] + previous[i - 1, j] +
@@ -2836,7 +2839,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
  *                 data -= data * 0.03125
  *                 current[i, j] = data             # <<<<<<<<<<<<<<
  *                 data = 1 - data * c1
- * 
+ *                 a = max(<int>(((i - rows2) * data) + rows2) % rows_, 0)
  */
                               __pyx_t_16 = __pyx_v_i;
                               __pyx_t_17 = __pyx_v_j;
@@ -2846,14 +2849,14 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
  *                 data -= data * 0.03125
  *                 current[i, j] = data
  *                 data = 1 - data * c1             # <<<<<<<<<<<<<<
- * 
  *                 a = max(<int>(((i - rows2) * data) + rows2) % rows_, 0)
+ *                 b = max(<int>(((j - cols2) * data) + cols2) % cols_, 0)
  */
                               __pyx_v_data = (1.0 - (__pyx_v_data * __pyx_v_c1));
 
-                              /* "RippleEffect.pyx":71
+                              /* "RippleEffect.pyx":70
+ *                 current[i, j] = data
  *                 data = 1 - data * c1
- * 
  *                 a = max(<int>(((i - rows2) * data) + rows2) % rows_, 0)             # <<<<<<<<<<<<<<
  *                 b = max(<int>(((j - cols2) * data) + cols2) % cols_, 0)
  *                 background_array[i, j, 0], background_array[i, j, 1], background_array[i, j, 2] = \
@@ -2867,8 +2870,8 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
                               }
                               __pyx_v_a = __pyx_t_20;
 
-                              /* "RippleEffect.pyx":72
- * 
+                              /* "RippleEffect.pyx":71
+ *                 data = 1 - data * c1
  *                 a = max(<int>(((i - rows2) * data) + rows2) % rows_, 0)
  *                 b = max(<int>(((j - cols2) * data) + cols2) % cols_, 0)             # <<<<<<<<<<<<<<
  *                 background_array[i, j, 0], background_array[i, j, 1], background_array[i, j, 2] = \
@@ -2883,7 +2886,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
                               }
                               __pyx_v_b = __pyx_t_18;
 
-                              /* "RippleEffect.pyx":74
+                              /* "RippleEffect.pyx":73
  *                 b = max(<int>(((j - cols2) * data) + cols2) % cols_, 0)
  *                 background_array[i, j, 0], background_array[i, j, 1], background_array[i, j, 2] = \
  *                     texture_array[a, b, 0], texture_array[a, b, 1], texture_array[a, b, 2]             # <<<<<<<<<<<<<<
@@ -2903,7 +2906,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
                               __pyx_t_31 = 2;
                               __pyx_t_32 = (*((unsigned char *) ( /* dim=2 */ ((char *) (((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_texture_array.data + __pyx_t_29 * __pyx_v_texture_array.strides[0]) ) + __pyx_t_30 * __pyx_v_texture_array.strides[1]) )) + __pyx_t_31)) )));
 
-                              /* "RippleEffect.pyx":73
+                              /* "RippleEffect.pyx":72
  *                 a = max(<int>(((i - rows2) * data) + rows2) % rows_, 0)
  *                 b = max(<int>(((j - cols2) * data) + cols2) % cols_, 0)
  *                 background_array[i, j, 0], background_array[i, j, 1], background_array[i, j, 2] = \             # <<<<<<<<<<<<<<
@@ -2940,7 +2943,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
  *     # from 1 to w - 1 to avoid python wraparound error
  *     # same for j (1 to h - 1)
  *     with nogil:             # <<<<<<<<<<<<<<
- *         for j in prange(1, cols_1):  # , schedule='static', chunksize=30):
+ *         for j in prange(1, cols_1, schedule='static', num_threads=8):
  *             for i in range(1, rows_1):
  */
       /*finally:*/ {
@@ -2955,7 +2958,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
       }
   }
 
-  /* "RippleEffect.pyx":79
+  /* "RippleEffect.pyx":78
  *                 #        texture_array[a + 1, b, 0], texture_array[a + 1, b, 1], texture_array[a + 1, b, 2]
  * 
  *     return current, previous, asarray(background_array)             # <<<<<<<<<<<<<<
@@ -2963,13 +2966,13 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_42 = __pyx_memoryview_fromslice(__pyx_v_current, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_42)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_42 = __pyx_memoryview_fromslice(__pyx_v_current, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_42)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_42);
-  __pyx_t_43 = __pyx_memoryview_fromslice(__pyx_v_previous, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_43)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_43 = __pyx_memoryview_fromslice(__pyx_v_previous, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_43)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_43);
-  __pyx_t_45 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_45)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_45 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_45)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_45);
-  __pyx_t_46 = __pyx_memoryview_fromslice(__pyx_v_background_array, 3, (PyObject *(*)(char *)) __pyx_memview_get_unsigned_char, (int (*)(char *, PyObject *)) __pyx_memview_set_unsigned_char, 0);; if (unlikely(!__pyx_t_46)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_46 = __pyx_memoryview_fromslice(__pyx_v_background_array, 3, (PyObject *(*)(char *)) __pyx_memview_get_unsigned_char, (int (*)(char *, PyObject *)) __pyx_memview_set_unsigned_char, 0);; if (unlikely(!__pyx_t_46)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_46);
   __pyx_t_47 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_45))) {
@@ -2982,14 +2985,14 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
     }
   }
   if (!__pyx_t_47) {
-    __pyx_t_44 = __Pyx_PyObject_CallOneArg(__pyx_t_45, __pyx_t_46); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __pyx_t_44 = __Pyx_PyObject_CallOneArg(__pyx_t_45, __pyx_t_46); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 78, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_46); __pyx_t_46 = 0;
     __Pyx_GOTREF(__pyx_t_44);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_45)) {
       PyObject *__pyx_temp[2] = {__pyx_t_47, __pyx_t_46};
-      __pyx_t_44 = __Pyx_PyFunction_FastCall(__pyx_t_45, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 79, __pyx_L1_error)
+      __pyx_t_44 = __Pyx_PyFunction_FastCall(__pyx_t_45, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 78, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_47); __pyx_t_47 = 0;
       __Pyx_GOTREF(__pyx_t_44);
       __Pyx_DECREF(__pyx_t_46); __pyx_t_46 = 0;
@@ -2998,26 +3001,26 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_45)) {
       PyObject *__pyx_temp[2] = {__pyx_t_47, __pyx_t_46};
-      __pyx_t_44 = __Pyx_PyCFunction_FastCall(__pyx_t_45, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 79, __pyx_L1_error)
+      __pyx_t_44 = __Pyx_PyCFunction_FastCall(__pyx_t_45, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 78, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_47); __pyx_t_47 = 0;
       __Pyx_GOTREF(__pyx_t_44);
       __Pyx_DECREF(__pyx_t_46); __pyx_t_46 = 0;
     } else
     #endif
     {
-      __pyx_t_48 = PyTuple_New(1+1); if (unlikely(!__pyx_t_48)) __PYX_ERR(0, 79, __pyx_L1_error)
+      __pyx_t_48 = PyTuple_New(1+1); if (unlikely(!__pyx_t_48)) __PYX_ERR(0, 78, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_48);
       __Pyx_GIVEREF(__pyx_t_47); PyTuple_SET_ITEM(__pyx_t_48, 0, __pyx_t_47); __pyx_t_47 = NULL;
       __Pyx_GIVEREF(__pyx_t_46);
       PyTuple_SET_ITEM(__pyx_t_48, 0+1, __pyx_t_46);
       __pyx_t_46 = 0;
-      __pyx_t_44 = __Pyx_PyObject_Call(__pyx_t_45, __pyx_t_48, NULL); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 79, __pyx_L1_error)
+      __pyx_t_44 = __Pyx_PyObject_Call(__pyx_t_45, __pyx_t_48, NULL); if (unlikely(!__pyx_t_44)) __PYX_ERR(0, 78, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_44);
       __Pyx_DECREF(__pyx_t_48); __pyx_t_48 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_45); __pyx_t_45 = 0;
-  __pyx_t_45 = PyTuple_New(3); if (unlikely(!__pyx_t_45)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_45 = PyTuple_New(3); if (unlikely(!__pyx_t_45)) __PYX_ERR(0, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_45);
   __Pyx_GIVEREF(__pyx_t_42);
   PyTuple_SET_ITEM(__pyx_t_45, 0, __pyx_t_42);
@@ -3032,7 +3035,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
   __pyx_t_45 = 0;
   goto __pyx_L0;
 
-  /* "RippleEffect.pyx":41
+  /* "RippleEffect.pyx":42
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef inline new_c(int cols_, int rows_,             # <<<<<<<<<<<<<<
@@ -3057,7 +3060,7 @@ static CYTHON_INLINE PyObject *__pyx_f_12RippleEffect_new_c(int __pyx_v_cols_, i
   return __pyx_r;
 }
 
-/* "RippleEffect.pyx":87
+/* "RippleEffect.pyx":86
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef shift_vert_pos(float [:, :] arr, int num):             # <<<<<<<<<<<<<<
@@ -3081,7 +3084,7 @@ static PyObject *__pyx_f_12RippleEffect_shift_vert_pos(__Pyx_memviewslice __pyx_
   PyObject *__pyx_t_9 = NULL;
   __Pyx_RefNannySetupContext("shift_vert_pos", 0);
 
-  /* "RippleEffect.pyx":88
+  /* "RippleEffect.pyx":87
  * @cython.cdivision(True)
  * cdef shift_vert_pos(float [:, :] arr, int num):
  *     cdef float fill_value=0.0             # <<<<<<<<<<<<<<
@@ -3090,44 +3093,44 @@ static PyObject *__pyx_f_12RippleEffect_shift_vert_pos(__Pyx_memviewslice __pyx_
  */
   __pyx_v_fill_value = 0.0;
 
-  /* "RippleEffect.pyx":89
+  /* "RippleEffect.pyx":88
  * cdef shift_vert_pos(float [:, :] arr, int num):
  *     cdef float fill_value=0.0
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)             # <<<<<<<<<<<<<<
  *     result[:num, :] = fill_value
  *     result[num:, :] = arr[:-num, :]
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_numpy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_numpy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty_like); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty_like); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_arr, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_arr, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 89, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(__pyx_t_4);
-  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 89, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_result = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "RippleEffect.pyx":90
+  /* "RippleEffect.pyx":89
  *     cdef float fill_value=0.0
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)
  *     result[:num, :] = fill_value             # <<<<<<<<<<<<<<
@@ -3152,7 +3155,7 @@ static PyObject *__pyx_f_12RippleEffect_shift_vert_pos(__Pyx_memviewslice __pyx_
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 90, __pyx_L1_error)
+    __PYX_ERR(0, 89, __pyx_L1_error)
 }
 
 __pyx_t_5.shape[1] = __pyx_v_result.shape[1];
@@ -3185,7 +3188,7 @@ __pyx_t_5.strides[1] = __pyx_v_result.strides[1];
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "RippleEffect.pyx":91
+  /* "RippleEffect.pyx":90
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)
  *     result[:num, :] = fill_value
  *     result[num:, :] = arr[:-num, :]             # <<<<<<<<<<<<<<
@@ -3210,7 +3213,7 @@ __pyx_t_5.strides[1] = __pyx_v_result.strides[1];
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 91, __pyx_L1_error)
+    __PYX_ERR(0, 90, __pyx_L1_error)
 }
 
 __pyx_t_7.shape[1] = __pyx_v_arr.shape[1];
@@ -3235,14 +3238,14 @@ __pyx_t_8.data = __pyx_v_result.data;
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 91, __pyx_L1_error)
+    __PYX_ERR(0, 90, __pyx_L1_error)
 }
 
 __pyx_t_8.shape[1] = __pyx_v_result.shape[1];
 __pyx_t_8.strides[1] = __pyx_v_result.strides[1];
     __pyx_t_8.suboffsets[1] = -1;
 
-if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0)) __PYX_ERR(0, 91, __pyx_L1_error)
+if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0)) __PYX_ERR(0, 90, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_t_8, 1);
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
@@ -3250,7 +3253,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   __pyx_t_7.memview = NULL;
   __pyx_t_7.data = NULL;
 
-  /* "RippleEffect.pyx":92
+  /* "RippleEffect.pyx":91
  *     result[:num, :] = fill_value
  *     result[num:, :] = arr[:-num, :]
  *     return asarray(result)             # <<<<<<<<<<<<<<
@@ -3258,9 +3261,9 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
  * @cython.boundscheck(False)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_result, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_result, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -3273,14 +3276,14 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 92, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 91, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 92, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3289,20 +3292,20 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 92, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     } else
     #endif
     {
-      __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 92, __pyx_L1_error)
+      __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2); __pyx_t_2 = NULL;
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_9, 0+1, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 92, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
@@ -3312,7 +3315,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "RippleEffect.pyx":87
+  /* "RippleEffect.pyx":86
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef shift_vert_pos(float [:, :] arr, int num):             # <<<<<<<<<<<<<<
@@ -3339,7 +3342,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   return __pyx_r;
 }
 
-/* "RippleEffect.pyx":98
+/* "RippleEffect.pyx":97
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef shift_vert_neg(float [:, :] arr, int num):             # <<<<<<<<<<<<<<
@@ -3363,7 +3366,7 @@ static PyObject *__pyx_f_12RippleEffect_shift_vert_neg(__Pyx_memviewslice __pyx_
   PyObject *__pyx_t_9 = NULL;
   __Pyx_RefNannySetupContext("shift_vert_neg", 0);
 
-  /* "RippleEffect.pyx":99
+  /* "RippleEffect.pyx":98
  * @cython.cdivision(True)
  * cdef shift_vert_neg(float [:, :] arr, int num):
  *     cdef float fill_value=0.0             # <<<<<<<<<<<<<<
@@ -3372,44 +3375,44 @@ static PyObject *__pyx_f_12RippleEffect_shift_vert_neg(__Pyx_memviewslice __pyx_
  */
   __pyx_v_fill_value = 0.0;
 
-  /* "RippleEffect.pyx":100
+  /* "RippleEffect.pyx":99
  * cdef shift_vert_neg(float [:, :] arr, int num):
  *     cdef float fill_value=0.0
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)             # <<<<<<<<<<<<<<
  *     result[num:, :] = fill_value
  *     result[:num, :] = arr[-num:, :]
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_numpy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_numpy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty_like); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty_like); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_arr, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_arr, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(__pyx_t_4);
-  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 100, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_result = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "RippleEffect.pyx":101
+  /* "RippleEffect.pyx":100
  *     cdef float fill_value=0.0
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)
  *     result[num:, :] = fill_value             # <<<<<<<<<<<<<<
@@ -3434,7 +3437,7 @@ static PyObject *__pyx_f_12RippleEffect_shift_vert_neg(__Pyx_memviewslice __pyx_
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 101, __pyx_L1_error)
+    __PYX_ERR(0, 100, __pyx_L1_error)
 }
 
 __pyx_t_5.shape[1] = __pyx_v_result.shape[1];
@@ -3467,7 +3470,7 @@ __pyx_t_5.strides[1] = __pyx_v_result.strides[1];
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "RippleEffect.pyx":102
+  /* "RippleEffect.pyx":101
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)
  *     result[num:, :] = fill_value
  *     result[:num, :] = arr[-num:, :]             # <<<<<<<<<<<<<<
@@ -3492,7 +3495,7 @@ __pyx_t_5.strides[1] = __pyx_v_result.strides[1];
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 102, __pyx_L1_error)
+    __PYX_ERR(0, 101, __pyx_L1_error)
 }
 
 __pyx_t_7.shape[1] = __pyx_v_arr.shape[1];
@@ -3517,14 +3520,14 @@ __pyx_t_8.data = __pyx_v_result.data;
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 102, __pyx_L1_error)
+    __PYX_ERR(0, 101, __pyx_L1_error)
 }
 
 __pyx_t_8.shape[1] = __pyx_v_result.shape[1];
 __pyx_t_8.strides[1] = __pyx_v_result.strides[1];
     __pyx_t_8.suboffsets[1] = -1;
 
-if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0)) __PYX_ERR(0, 102, __pyx_L1_error)
+if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0)) __PYX_ERR(0, 101, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_t_8, 1);
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
@@ -3532,7 +3535,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   __pyx_t_7.memview = NULL;
   __pyx_t_7.data = NULL;
 
-  /* "RippleEffect.pyx":103
+  /* "RippleEffect.pyx":102
  *     result[num:, :] = fill_value
  *     result[:num, :] = arr[-num:, :]
  *     return asarray(result)             # <<<<<<<<<<<<<<
@@ -3540,9 +3543,9 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_result, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_result, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -3555,14 +3558,14 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3571,20 +3574,20 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     } else
     #endif
     {
-      __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 102, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2); __pyx_t_2 = NULL;
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_9, 0+1, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 102, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
@@ -3594,7 +3597,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "RippleEffect.pyx":98
+  /* "RippleEffect.pyx":97
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef shift_vert_neg(float [:, :] arr, int num):             # <<<<<<<<<<<<<<
@@ -3621,7 +3624,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   return __pyx_r;
 }
 
-/* "RippleEffect.pyx":110
+/* "RippleEffect.pyx":109
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef shift_horiz_pos(float [:, :] arr, int num):             # <<<<<<<<<<<<<<
@@ -3645,7 +3648,7 @@ static PyObject *__pyx_f_12RippleEffect_shift_horiz_pos(__Pyx_memviewslice __pyx
   PyObject *__pyx_t_9 = NULL;
   __Pyx_RefNannySetupContext("shift_horiz_pos", 0);
 
-  /* "RippleEffect.pyx":111
+  /* "RippleEffect.pyx":110
  * @cython.cdivision(True)
  * cdef shift_horiz_pos(float [:, :] arr, int num):
  *     cdef float fill_value=0.0             # <<<<<<<<<<<<<<
@@ -3654,44 +3657,44 @@ static PyObject *__pyx_f_12RippleEffect_shift_horiz_pos(__Pyx_memviewslice __pyx
  */
   __pyx_v_fill_value = 0.0;
 
-  /* "RippleEffect.pyx":112
+  /* "RippleEffect.pyx":111
  * cdef shift_horiz_pos(float [:, :] arr, int num):
  *     cdef float fill_value=0.0
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)             # <<<<<<<<<<<<<<
  *     result[:, :num] = fill_value
  *     result[:, num:] = arr[:, :-num]
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_numpy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_numpy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty_like); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty_like); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_arr, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_arr, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 112, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(__pyx_t_4);
-  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 112, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_result = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "RippleEffect.pyx":113
+  /* "RippleEffect.pyx":112
  *     cdef float fill_value=0.0
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)
  *     result[:, :num] = fill_value             # <<<<<<<<<<<<<<
@@ -3720,7 +3723,7 @@ __pyx_t_6 = -1;
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 113, __pyx_L1_error)
+    __PYX_ERR(0, 112, __pyx_L1_error)
 }
 
 {
@@ -3749,7 +3752,7 @@ __pyx_t_6 = -1;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "RippleEffect.pyx":114
+  /* "RippleEffect.pyx":113
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)
  *     result[:, :num] = fill_value
  *     result[:, num:] = arr[:, :-num]             # <<<<<<<<<<<<<<
@@ -3778,7 +3781,7 @@ __pyx_t_6 = -1;
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 114, __pyx_L1_error)
+    __PYX_ERR(0, 113, __pyx_L1_error)
 }
 
 __pyx_t_8.data = __pyx_v_result.data;
@@ -3803,10 +3806,10 @@ __pyx_t_6 = -1;
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 114, __pyx_L1_error)
+    __PYX_ERR(0, 113, __pyx_L1_error)
 }
 
-if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0)) __PYX_ERR(0, 114, __pyx_L1_error)
+if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0)) __PYX_ERR(0, 113, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_t_8, 1);
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
@@ -3814,7 +3817,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   __pyx_t_7.memview = NULL;
   __pyx_t_7.data = NULL;
 
-  /* "RippleEffect.pyx":115
+  /* "RippleEffect.pyx":114
  *     result[:, :num] = fill_value
  *     result[:, num:] = arr[:, :-num]
  *     return asarray(result)             # <<<<<<<<<<<<<<
@@ -3822,9 +3825,9 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_result, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_result, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -3837,14 +3840,14 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 115, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 115, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 114, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3853,20 +3856,20 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 115, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 114, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     } else
     #endif
     {
-      __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
+      __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 114, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2); __pyx_t_2 = NULL;
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_9, 0+1, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 115, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 114, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
@@ -3876,7 +3879,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "RippleEffect.pyx":110
+  /* "RippleEffect.pyx":109
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef shift_horiz_pos(float [:, :] arr, int num):             # <<<<<<<<<<<<<<
@@ -3903,7 +3906,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   return __pyx_r;
 }
 
-/* "RippleEffect.pyx":122
+/* "RippleEffect.pyx":121
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef shift_horiz_neg(float [:, :] arr, int num):             # <<<<<<<<<<<<<<
@@ -3927,7 +3930,7 @@ static PyObject *__pyx_f_12RippleEffect_shift_horiz_neg(__Pyx_memviewslice __pyx
   PyObject *__pyx_t_9 = NULL;
   __Pyx_RefNannySetupContext("shift_horiz_neg", 0);
 
-  /* "RippleEffect.pyx":123
+  /* "RippleEffect.pyx":122
  * @cython.cdivision(True)
  * cdef shift_horiz_neg(float [:, :] arr, int num):
  *     cdef float fill_value=0.0             # <<<<<<<<<<<<<<
@@ -3936,44 +3939,44 @@ static PyObject *__pyx_f_12RippleEffect_shift_horiz_neg(__Pyx_memviewslice __pyx
  */
   __pyx_v_fill_value = 0.0;
 
-  /* "RippleEffect.pyx":124
+  /* "RippleEffect.pyx":123
  * cdef shift_horiz_neg(float [:, :] arr, int num):
  *     cdef float fill_value=0.0
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)             # <<<<<<<<<<<<<<
  *     result[:, num:] = fill_value
  *     result[:, :num] = arr[:, -num:]
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_numpy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_numpy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty_like); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_empty_like); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_arr, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_1 = __pyx_memoryview_fromslice(__pyx_v_arr, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 124, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_5 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(__pyx_t_4);
-  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 124, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5.memview)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_result = __pyx_t_5;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "RippleEffect.pyx":125
+  /* "RippleEffect.pyx":124
  *     cdef float fill_value=0.0
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)
  *     result[:, num:] = fill_value             # <<<<<<<<<<<<<<
@@ -4002,7 +4005,7 @@ __pyx_t_6 = -1;
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 125, __pyx_L1_error)
+    __PYX_ERR(0, 124, __pyx_L1_error)
 }
 
 {
@@ -4031,7 +4034,7 @@ __pyx_t_6 = -1;
   __pyx_t_5.memview = NULL;
   __pyx_t_5.data = NULL;
 
-  /* "RippleEffect.pyx":126
+  /* "RippleEffect.pyx":125
  *     cdef float [:, :] result = numpy.empty_like(arr, dtype=float32)
  *     result[:, num:] = fill_value
  *     result[:, :num] = arr[:, -num:]             # <<<<<<<<<<<<<<
@@ -4060,7 +4063,7 @@ __pyx_t_6 = -1;
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 126, __pyx_L1_error)
+    __PYX_ERR(0, 125, __pyx_L1_error)
 }
 
 __pyx_t_8.data = __pyx_v_result.data;
@@ -4085,10 +4088,10 @@ __pyx_t_6 = -1;
     0,
     1) < 0))
 {
-    __PYX_ERR(0, 126, __pyx_L1_error)
+    __PYX_ERR(0, 125, __pyx_L1_error)
 }
 
-if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0)) __PYX_ERR(0, 126, __pyx_L1_error)
+if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0)) __PYX_ERR(0, 125, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_t_8, 1);
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
@@ -4096,7 +4099,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   __pyx_t_7.memview = NULL;
   __pyx_t_7.data = NULL;
 
-  /* "RippleEffect.pyx":127
+  /* "RippleEffect.pyx":126
  *     result[:, num:] = fill_value
  *     result[:, :num] = arr[:, -num:]
  *     return asarray(result)             # <<<<<<<<<<<<<<
@@ -4104,9 +4107,9 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_result, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 127, __pyx_L1_error)
+  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_result, 2, (PyObject *(*)(char *)) __pyx_memview_get_float, (int (*)(char *, PyObject *)) __pyx_memview_set_float, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -4119,14 +4122,14 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 127, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 126, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -4135,20 +4138,20 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     } else
     #endif
     {
-      __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __pyx_t_9 = PyTuple_New(1+1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2); __pyx_t_2 = NULL;
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_9, 0+1, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_9, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
@@ -4158,7 +4161,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "RippleEffect.pyx":122
+  /* "RippleEffect.pyx":121
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef shift_horiz_neg(float [:, :] arr, int num):             # <<<<<<<<<<<<<<
@@ -4185,7 +4188,7 @@ if (unlikely(__pyx_memoryview_copy_contents(__pyx_t_7, __pyx_t_8, 2, 2, 0) < 0))
   return __pyx_r;
 }
 
-/* "RippleEffect.pyx":139
+/* "RippleEffect.pyx":138
  * # over all pixels to apply background deformation.
  * 
  * def new__(cols_: int, rows_: int, previous: ndarray, current: ndarray,             # <<<<<<<<<<<<<<
@@ -4238,35 +4241,35 @@ static PyObject *__pyx_pw_12RippleEffect_3new__(PyObject *__pyx_self, PyObject *
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_rows)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 1); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 1); __PYX_ERR(0, 138, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_previous)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 2); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 2); __PYX_ERR(0, 138, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_current)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 3); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 3); __PYX_ERR(0, 138, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_texture_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 4); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 4); __PYX_ERR(0, 138, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_background_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 5); __PYX_ERR(0, 139, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, 5); __PYX_ERR(0, 138, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "new__") < 0)) __PYX_ERR(0, 139, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "new__") < 0)) __PYX_ERR(0, 138, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -4287,7 +4290,7 @@ static PyObject *__pyx_pw_12RippleEffect_3new__(PyObject *__pyx_self, PyObject *
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 139, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("new__", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 138, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("RippleEffect.new__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4310,7 +4313,7 @@ static PyObject *__pyx_pf_12RippleEffect_2new__(CYTHON_UNUSED PyObject *__pyx_se
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("new__", 0);
 
-  /* "RippleEffect.pyx":152
+  /* "RippleEffect.pyx":151
  *     :return: Return 3 numpy arrays (current, previous, background_array)
  *     """
  *     return new__c(cols_, rows_, previous, current, texture_array, background_array)             # <<<<<<<<<<<<<<
@@ -4318,15 +4321,15 @@ static PyObject *__pyx_pf_12RippleEffect_2new__(CYTHON_UNUSED PyObject *__pyx_se
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_cols_); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_rows_); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 152, __pyx_L1_error)
-  if (!(likely(((__pyx_v_previous) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_previous, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 152, __pyx_L1_error)
-  if (!(likely(((__pyx_v_current) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_current, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_cols_); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_rows_); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 151, __pyx_L1_error)
+  if (!(likely(((__pyx_v_previous) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_previous, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 151, __pyx_L1_error)
+  if (!(likely(((__pyx_v_current) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_current, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 151, __pyx_L1_error)
   __pyx_t_3 = __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_unsigned_char(__pyx_v_texture_array);
-  if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3.memview)) __PYX_ERR(0, 151, __pyx_L1_error)
   __pyx_t_4 = __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_unsigned_char(__pyx_v_background_array);
-  if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 152, __pyx_L1_error)
-  __pyx_t_5 = __pyx_f_12RippleEffect_new__c(__pyx_t_1, __pyx_t_2, ((PyArrayObject *)__pyx_v_previous), ((PyArrayObject *)__pyx_v_current), __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 152, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4.memview)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_5 = __pyx_f_12RippleEffect_new__c(__pyx_t_1, __pyx_t_2, ((PyArrayObject *)__pyx_v_previous), ((PyArrayObject *)__pyx_v_current), __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __PYX_XDEC_MEMVIEW(&__pyx_t_3, 1);
   __pyx_t_3.memview = NULL;
@@ -4338,7 +4341,7 @@ static PyObject *__pyx_pf_12RippleEffect_2new__(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "RippleEffect.pyx":139
+  /* "RippleEffect.pyx":138
  * # over all pixels to apply background deformation.
  * 
  * def new__(cols_: int, rows_: int, previous: ndarray, current: ndarray,             # <<<<<<<<<<<<<<
@@ -4359,7 +4362,7 @@ static PyObject *__pyx_pf_12RippleEffect_2new__(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "RippleEffect.pyx":159
+/* "RippleEffect.pyx":158
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef new__c(int cols_, int rows_,             # <<<<<<<<<<<<<<
@@ -4445,16 +4448,16 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
   __pyx_pybuffernd_current.rcbuffer = &__pyx_pybuffer_current;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_previous.rcbuffer->pybuffer, (PyObject*)__pyx_v_previous, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 159, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_previous.rcbuffer->pybuffer, (PyObject*)__pyx_v_previous, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 158, __pyx_L1_error)
   }
   __pyx_pybuffernd_previous.diminfo[0].strides = __pyx_pybuffernd_previous.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_previous.diminfo[0].shape = __pyx_pybuffernd_previous.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_previous.diminfo[1].strides = __pyx_pybuffernd_previous.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_previous.diminfo[1].shape = __pyx_pybuffernd_previous.rcbuffer->pybuffer.shape[1];
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_current.rcbuffer->pybuffer, (PyObject*)__pyx_v_current, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 159, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_current.rcbuffer->pybuffer, (PyObject*)__pyx_v_current, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) __PYX_ERR(0, 158, __pyx_L1_error)
   }
   __pyx_pybuffernd_current.diminfo[0].strides = __pyx_pybuffernd_current.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_current.diminfo[0].shape = __pyx_pybuffernd_current.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_current.diminfo[1].strides = __pyx_pybuffernd_current.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_current.diminfo[1].shape = __pyx_pybuffernd_current.rcbuffer->pybuffer.shape[1];
 
-  /* "RippleEffect.pyx":165
+  /* "RippleEffect.pyx":164
  *             unsigned char [:, :, ::1] background_array
  *             ):
  *     cdef float c1 = 1.0/1024             # <<<<<<<<<<<<<<
@@ -4463,7 +4466,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
  */
   __pyx_v_c1 = (1.0 / 1024.0);
 
-  /* "RippleEffect.pyx":167
+  /* "RippleEffect.pyx":166
  *     cdef float c1 = 1.0/1024
  *     cdef np.ndarray[np.float32_t, ndim=2] data = \
  *             (shift_vert_pos(previous, 1) + shift_vert_neg(previous, -1) +             # <<<<<<<<<<<<<<
@@ -4471,15 +4474,61 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
  *     #cdef np.ndarray[np.float32_t, ndim=2] data = (roll(previous, -1, axis=1) + roll(previous, 1, axis=1)
  */
   __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(((PyObject *)__pyx_v_previous));
-  if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 167, __pyx_L1_error)
-  __pyx_t_2 = __pyx_f_12RippleEffect_shift_vert_pos(__pyx_t_1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_2 = __pyx_f_12RippleEffect_shift_vert_pos(__pyx_t_1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
   __pyx_t_1.memview = NULL;
   __pyx_t_1.data = NULL;
   __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(((PyObject *)__pyx_v_previous));
+  if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_12RippleEffect_shift_vert_neg(__pyx_t_1, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
+  __pyx_t_1.memview = NULL;
+  __pyx_t_1.data = NULL;
+  __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "RippleEffect.pyx":167
+ *     cdef np.ndarray[np.float32_t, ndim=2] data = \
+ *             (shift_vert_pos(previous, 1) + shift_vert_neg(previous, -1) +
+ *             shift_horiz_pos(previous, 1) + shift_horiz_neg(previous, -1)) * 0.5             # <<<<<<<<<<<<<<
+ *     #cdef np.ndarray[np.float32_t, ndim=2] data = (roll(previous, -1, axis=1) + roll(previous, 1, axis=1)
+ *     #    + roll(previous, 1, axis=0) + roll(previous, -1, axis=0)) * 0.5
+ */
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(((PyObject *)__pyx_v_previous));
   if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 167, __pyx_L1_error)
-  __pyx_t_3 = __pyx_f_12RippleEffect_shift_vert_neg(__pyx_t_1, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_12RippleEffect_shift_horiz_pos(__pyx_t_1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
+  __pyx_t_1.memview = NULL;
+  __pyx_t_1.data = NULL;
+
+  /* "RippleEffect.pyx":166
+ *     cdef float c1 = 1.0/1024
+ *     cdef np.ndarray[np.float32_t, ndim=2] data = \
+ *             (shift_vert_pos(previous, 1) + shift_vert_neg(previous, -1) +             # <<<<<<<<<<<<<<
+ *             shift_horiz_pos(previous, 1) + shift_horiz_neg(previous, -1)) * 0.5
+ *     #cdef np.ndarray[np.float32_t, ndim=2] data = (roll(previous, -1, axis=1) + roll(previous, 1, axis=1)
+ */
+  __pyx_t_2 = PyNumber_Add(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "RippleEffect.pyx":167
+ *     cdef np.ndarray[np.float32_t, ndim=2] data = \
+ *             (shift_vert_pos(previous, 1) + shift_vert_neg(previous, -1) +
+ *             shift_horiz_pos(previous, 1) + shift_horiz_neg(previous, -1)) * 0.5             # <<<<<<<<<<<<<<
+ *     #cdef np.ndarray[np.float32_t, ndim=2] data = (roll(previous, -1, axis=1) + roll(previous, 1, axis=1)
+ *     #    + roll(previous, 1, axis=0) + roll(previous, -1, axis=0)) * 0.5
+ */
+  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(((PyObject *)__pyx_v_previous));
+  if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_12RippleEffect_shift_horiz_neg(__pyx_t_1, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
   __pyx_t_1.memview = NULL;
@@ -4488,62 +4537,16 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-  /* "RippleEffect.pyx":168
- *     cdef np.ndarray[np.float32_t, ndim=2] data = \
- *             (shift_vert_pos(previous, 1) + shift_vert_neg(previous, -1) +
- *             shift_horiz_pos(previous, 1) + shift_horiz_neg(previous, -1)) * 0.5             # <<<<<<<<<<<<<<
- *     #cdef np.ndarray[np.float32_t, ndim=2] data = (roll(previous, -1, axis=1) + roll(previous, 1, axis=1)
- *     #    + roll(previous, 1, axis=0) + roll(previous, -1, axis=0)) * 0.5
- */
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(((PyObject *)__pyx_v_previous));
-  if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 168, __pyx_L1_error)
-  __pyx_t_3 = __pyx_f_12RippleEffect_shift_horiz_pos(__pyx_t_1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 168, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
-  __pyx_t_1.memview = NULL;
-  __pyx_t_1.data = NULL;
-
-  /* "RippleEffect.pyx":167
- *     cdef float c1 = 1.0/1024
- *     cdef np.ndarray[np.float32_t, ndim=2] data = \
- *             (shift_vert_pos(previous, 1) + shift_vert_neg(previous, -1) +             # <<<<<<<<<<<<<<
- *             shift_horiz_pos(previous, 1) + shift_horiz_neg(previous, -1)) * 0.5
- *     #cdef np.ndarray[np.float32_t, ndim=2] data = (roll(previous, -1, axis=1) + roll(previous, 1, axis=1)
- */
-  __pyx_t_2 = PyNumber_Add(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 167, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-  /* "RippleEffect.pyx":168
- *     cdef np.ndarray[np.float32_t, ndim=2] data = \
- *             (shift_vert_pos(previous, 1) + shift_vert_neg(previous, -1) +
- *             shift_horiz_pos(previous, 1) + shift_horiz_neg(previous, -1)) * 0.5             # <<<<<<<<<<<<<<
- *     #cdef np.ndarray[np.float32_t, ndim=2] data = (roll(previous, -1, axis=1) + roll(previous, 1, axis=1)
- *     #    + roll(previous, 1, axis=0) + roll(previous, -1, axis=0)) * 0.5
- */
-  __pyx_t_1 = __Pyx_PyObject_to_MemoryviewSlice_dsds_float(((PyObject *)__pyx_v_previous));
-  if (unlikely(!__pyx_t_1.memview)) __PYX_ERR(0, 168, __pyx_L1_error)
-  __pyx_t_3 = __pyx_f_12RippleEffect_shift_horiz_neg(__pyx_t_1, -1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 168, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_1, 1);
-  __pyx_t_1.memview = NULL;
-  __pyx_t_1.data = NULL;
-  __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 168, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyNumber_Multiply(__pyx_t_4, __pyx_float_0_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(__pyx_t_4, __pyx_float_0_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 168, __pyx_L1_error)
+  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 167, __pyx_L1_error)
   __pyx_t_5 = ((PyArrayObject *)__pyx_t_3);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_data.rcbuffer->pybuffer, (PyObject*)__pyx_t_5, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 2, 0, __pyx_stack) == -1)) {
       __pyx_v_data = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_data.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(0, 166, __pyx_L1_error)
+      __PYX_ERR(0, 165, __pyx_L1_error)
     } else {__pyx_pybuffernd_data.diminfo[0].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_data.diminfo[0].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_data.diminfo[1].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_data.diminfo[1].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[1];
     }
   }
@@ -4551,16 +4554,16 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
   __pyx_v_data = ((PyArrayObject *)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "RippleEffect.pyx":172
+  /* "RippleEffect.pyx":171
  *     #    + roll(previous, 1, axis=0) + roll(previous, -1, axis=0)) * 0.5
  * 
  *     data -= current             # <<<<<<<<<<<<<<
  *     # data *= dampening
  *     data -= data * 0.03125
  */
-  __pyx_t_3 = PyNumber_InPlaceSubtract(((PyObject *)__pyx_v_data), ((PyObject *)__pyx_v_current)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 172, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_InPlaceSubtract(((PyObject *)__pyx_v_data), ((PyObject *)__pyx_v_current)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 172, __pyx_L1_error)
+  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 171, __pyx_L1_error)
   __pyx_t_5 = ((PyArrayObject *)__pyx_t_3);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -4577,25 +4580,25 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
       __pyx_t_7 = __pyx_t_8 = __pyx_t_9 = 0;
     }
     __pyx_pybuffernd_data.diminfo[0].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_data.diminfo[0].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_data.diminfo[1].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_data.diminfo[1].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 172, __pyx_L1_error)
+    if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 171, __pyx_L1_error)
   }
   __pyx_t_5 = 0;
   __Pyx_DECREF_SET(__pyx_v_data, ((PyArrayObject *)__pyx_t_3));
   __pyx_t_3 = 0;
 
-  /* "RippleEffect.pyx":174
+  /* "RippleEffect.pyx":173
  *     data -= current
  *     # data *= dampening
  *     data -= data * 0.03125             # <<<<<<<<<<<<<<
  *     current = data
  *     data = 1 - data * c1
  */
-  __pyx_t_3 = PyNumber_Multiply(((PyObject *)__pyx_v_data), __pyx_float_0_03125); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(((PyObject *)__pyx_v_data), __pyx_float_0_03125); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyNumber_InPlaceSubtract(((PyObject *)__pyx_v_data), __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 174, __pyx_L1_error)
+  __pyx_t_4 = PyNumber_InPlaceSubtract(((PyObject *)__pyx_v_data), __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 174, __pyx_L1_error)
+  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 173, __pyx_L1_error)
   __pyx_t_5 = ((PyArrayObject *)__pyx_t_4);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -4612,13 +4615,13 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
       __pyx_t_9 = __pyx_t_8 = __pyx_t_7 = 0;
     }
     __pyx_pybuffernd_data.diminfo[0].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_data.diminfo[0].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_data.diminfo[1].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_data.diminfo[1].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 174, __pyx_L1_error)
+    if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 173, __pyx_L1_error)
   }
   __pyx_t_5 = 0;
   __Pyx_DECREF_SET(__pyx_v_data, ((PyArrayObject *)__pyx_t_4));
   __pyx_t_4 = 0;
 
-  /* "RippleEffect.pyx":175
+  /* "RippleEffect.pyx":174
  *     # data *= dampening
  *     data -= data * 0.03125
  *     current = data             # <<<<<<<<<<<<<<
@@ -4640,27 +4643,27 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
       __pyx_t_7 = __pyx_t_8 = __pyx_t_9 = 0;
     }
     __pyx_pybuffernd_current.diminfo[0].strides = __pyx_pybuffernd_current.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_current.diminfo[0].shape = __pyx_pybuffernd_current.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_current.diminfo[1].strides = __pyx_pybuffernd_current.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_current.diminfo[1].shape = __pyx_pybuffernd_current.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 175, __pyx_L1_error)
+    if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 174, __pyx_L1_error)
   }
   __Pyx_INCREF(((PyObject *)__pyx_v_data));
   __Pyx_DECREF_SET(__pyx_v_current, ((PyArrayObject *)__pyx_v_data));
 
-  /* "RippleEffect.pyx":176
+  /* "RippleEffect.pyx":175
  *     data -= data * 0.03125
  *     current = data
  *     data = 1 - data * c1             # <<<<<<<<<<<<<<
  * 
  *     cdef:
  */
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_c1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_c1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = PyNumber_Multiply(((PyObject *)__pyx_v_data), __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(((PyObject *)__pyx_v_data), __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_t_3, 1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 176, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_t_3, 1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 176, __pyx_L1_error)
+  if (!(likely(((__pyx_t_4) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_4, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 175, __pyx_L1_error)
   __pyx_t_5 = ((PyArrayObject *)__pyx_t_4);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -4677,13 +4680,13 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
       __pyx_t_9 = __pyx_t_8 = __pyx_t_7 = 0;
     }
     __pyx_pybuffernd_data.diminfo[0].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_data.diminfo[0].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_data.diminfo[1].strides = __pyx_pybuffernd_data.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_data.diminfo[1].shape = __pyx_pybuffernd_data.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 176, __pyx_L1_error)
+    if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 175, __pyx_L1_error)
   }
   __pyx_t_5 = 0;
   __Pyx_DECREF_SET(__pyx_v_data, ((PyArrayObject *)__pyx_t_4));
   __pyx_t_4 = 0;
 
-  /* "RippleEffect.pyx":180
+  /* "RippleEffect.pyx":179
  *     cdef:
  *         int i, j, a, b
  *         int cols_1 = cols_ - 1             # <<<<<<<<<<<<<<
@@ -4692,7 +4695,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
  */
   __pyx_v_cols_1 = (__pyx_v_cols_ - 1);
 
-  /* "RippleEffect.pyx":181
+  /* "RippleEffect.pyx":180
  *         int i, j, a, b
  *         int cols_1 = cols_ - 1
  *         int rows_1 = rows_ - 1             # <<<<<<<<<<<<<<
@@ -4701,7 +4704,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
  */
   __pyx_v_rows_1 = (__pyx_v_rows_ - 1);
 
-  /* "RippleEffect.pyx":182
+  /* "RippleEffect.pyx":181
  *         int cols_1 = cols_ - 1
  *         int rows_1 = rows_ - 1
  *         int rows2 = rows_ >> 1             # <<<<<<<<<<<<<<
@@ -4710,7 +4713,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
  */
   __pyx_v_rows2 = (__pyx_v_rows_ >> 1);
 
-  /* "RippleEffect.pyx":183
+  /* "RippleEffect.pyx":182
  *         int rows_1 = rows_ - 1
  *         int rows2 = rows_ >> 1
  *         int cols2 = cols_ >> 1             # <<<<<<<<<<<<<<
@@ -4719,7 +4722,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
  */
   __pyx_v_cols2 = (__pyx_v_cols_ >> 1);
 
-  /* "RippleEffect.pyx":185
+  /* "RippleEffect.pyx":184
  *         int cols2 = cols_ >> 1
  * 
  *     with nogil:             # <<<<<<<<<<<<<<
@@ -4734,7 +4737,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
       #endif
       /*try:*/ {
 
-        /* "RippleEffect.pyx":186
+        /* "RippleEffect.pyx":185
  * 
  *     with nogil:
  *         for i in prange(1, cols_1):             # <<<<<<<<<<<<<<
@@ -4768,7 +4771,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
                             __pyx_v_b = ((int)0xbad0bad0);
                             __pyx_v_j = ((int)0xbad0bad0);
 
-                            /* "RippleEffect.pyx":187
+                            /* "RippleEffect.pyx":186
  *     with nogil:
  *         for i in prange(1, cols_1):
  *             for j in range(1, rows_1 ):             # <<<<<<<<<<<<<<
@@ -4779,7 +4782,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
                             for (__pyx_t_13 = 1; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
                               __pyx_v_j = __pyx_t_13;
 
-                              /* "RippleEffect.pyx":188
+                              /* "RippleEffect.pyx":187
  *         for i in prange(1, cols_1):
  *             for j in range(1, rows_1 ):
  *                 a = max(<int>(((j - rows2) * data[j, i]) + rows2) % rows_, 0)             # <<<<<<<<<<<<<<
@@ -4797,7 +4800,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
                               }
                               __pyx_v_a = __pyx_t_18;
 
-                              /* "RippleEffect.pyx":189
+                              /* "RippleEffect.pyx":188
  *             for j in range(1, rows_1 ):
  *                 a = max(<int>(((j - rows2) * data[j, i]) + rows2) % rows_, 0)
  *                 b = max(<int>(((i - cols2) * data[j, i]) + cols2) % cols_, 0)             # <<<<<<<<<<<<<<
@@ -4815,7 +4818,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
                               }
                               __pyx_v_b = __pyx_t_14;
 
-                              /* "RippleEffect.pyx":191
+                              /* "RippleEffect.pyx":190
  *                 b = max(<int>(((i - cols2) * data[j, i]) + cols2) % cols_, 0)
  *                 background_array[j, i, 0], background_array[j, i, 1], background_array[j, i, 2] = \
  *                     texture_array[a, b, 0], texture_array[a, b, 1], texture_array[a, b, 2]             # <<<<<<<<<<<<<<
@@ -4835,7 +4838,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
                               __pyx_t_31 = 2;
                               __pyx_t_32 = (*((unsigned char *) ( /* dim=2 */ ((char *) (((unsigned char *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_texture_array.data + __pyx_t_29 * __pyx_v_texture_array.strides[0]) ) + __pyx_t_30 * __pyx_v_texture_array.strides[1]) )) + __pyx_t_31)) )));
 
-                              /* "RippleEffect.pyx":190
+                              /* "RippleEffect.pyx":189
  *                 a = max(<int>(((j - rows2) * data[j, i]) + rows2) % rows_, 0)
  *                 b = max(<int>(((i - cols2) * data[j, i]) + cols2) % cols_, 0)
  *                 background_array[j, i, 0], background_array[j, i, 1], background_array[j, i, 2] = \             # <<<<<<<<<<<<<<
@@ -4868,7 +4871,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
         #endif
       }
 
-      /* "RippleEffect.pyx":185
+      /* "RippleEffect.pyx":184
  *         int cols2 = cols_ >> 1
  * 
  *     with nogil:             # <<<<<<<<<<<<<<
@@ -4887,7 +4890,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
       }
   }
 
-  /* "RippleEffect.pyx":196
+  /* "RippleEffect.pyx":195
  *                 #        texture_array[a + 1, b, 0], texture_array[a + 1, b, 1], texture_array[a + 1, b, 2]
  * 
  *     return current, previous, asarray(background_array)             # <<<<<<<<<<<<<<
@@ -4895,9 +4898,9 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_background_array, 3, (PyObject *(*)(char *)) __pyx_memview_get_unsigned_char, (int (*)(char *, PyObject *)) __pyx_memview_set_unsigned_char, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_background_array, 3, (PyObject *(*)(char *)) __pyx_memview_get_unsigned_char, (int (*)(char *, PyObject *)) __pyx_memview_set_unsigned_char, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_42 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -4910,14 +4913,14 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
     }
   }
   if (!__pyx_t_42) {
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 196, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 195, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_4);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_42, __pyx_t_2};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 196, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 195, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_42); __pyx_t_42 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -4926,26 +4929,26 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_42, __pyx_t_2};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 196, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 195, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_42); __pyx_t_42 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else
     #endif
     {
-      __pyx_t_43 = PyTuple_New(1+1); if (unlikely(!__pyx_t_43)) __PYX_ERR(0, 196, __pyx_L1_error)
+      __pyx_t_43 = PyTuple_New(1+1); if (unlikely(!__pyx_t_43)) __PYX_ERR(0, 195, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_43);
       __Pyx_GIVEREF(__pyx_t_42); PyTuple_SET_ITEM(__pyx_t_43, 0, __pyx_t_42); __pyx_t_42 = NULL;
       __Pyx_GIVEREF(__pyx_t_2);
       PyTuple_SET_ITEM(__pyx_t_43, 0+1, __pyx_t_2);
       __pyx_t_2 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_43, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 196, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_43, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 195, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_43); __pyx_t_43 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 196, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(((PyObject *)__pyx_v_current));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_current));
@@ -4960,7 +4963,7 @@ static PyObject *__pyx_f_12RippleEffect_new__c(int __pyx_v_cols_, int __pyx_v_ro
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "RippleEffect.pyx":159
+  /* "RippleEffect.pyx":158
  * @cython.nonecheck(False)
  * @cython.cdivision(True)
  * cdef new__c(int cols_, int rows_,             # <<<<<<<<<<<<<<
@@ -21531,29 +21534,29 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
 
-  /* "RippleEffect.pyx":20
+  /* "RippleEffect.pyx":21
  * # This method loop over all the pixels.
  * 
  * def new_(cols_: int, rows_:int, previous: ndarray, current: ndarray,             # <<<<<<<<<<<<<<
  *          texture_array: ndarray, background_array: ndarray):
  *     """
  */
-  __pyx_tuple__29 = PyTuple_Pack(6, __pyx_n_s_cols, __pyx_n_s_rows, __pyx_n_s_previous, __pyx_n_s_current, __pyx_n_s_texture_array, __pyx_n_s_background_array); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_tuple__29 = PyTuple_Pack(6, __pyx_n_s_cols, __pyx_n_s_rows, __pyx_n_s_previous, __pyx_n_s_current, __pyx_n_s_texture_array, __pyx_n_s_background_array); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(6, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_RippleEffect_pyx, __pyx_n_s_new_2, 20, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(6, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__29, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_RippleEffect_pyx, __pyx_n_s_new_2, 21, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 21, __pyx_L1_error)
 
-  /* "RippleEffect.pyx":139
+  /* "RippleEffect.pyx":138
  * # over all pixels to apply background deformation.
  * 
  * def new__(cols_: int, rows_: int, previous: ndarray, current: ndarray,             # <<<<<<<<<<<<<<
  *           texture_array: ndarray, background_array: ndarray):
  *     """
  */
-  __pyx_tuple__31 = PyTuple_Pack(6, __pyx_n_s_cols, __pyx_n_s_rows, __pyx_n_s_previous, __pyx_n_s_current, __pyx_n_s_texture_array, __pyx_n_s_background_array); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_tuple__31 = PyTuple_Pack(6, __pyx_n_s_cols, __pyx_n_s_rows, __pyx_n_s_previous, __pyx_n_s_current, __pyx_n_s_texture_array, __pyx_n_s_background_array); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_GIVEREF(__pyx_tuple__31);
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(6, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__31, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_RippleEffect_pyx, __pyx_n_s_new_3, 139, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(6, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__31, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_RippleEffect_pyx, __pyx_n_s_new_3, 138, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 138, __pyx_L1_error)
 
   /* "View.MemoryView":284
  *         return self.name
@@ -21919,8 +21922,8 @@ static int __pyx_pymod_exec_RippleEffect(PyObject *__pyx_pyinit_module)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "RippleEffect.pyx":10
- * from cython.parallel cimport prange
+  /* "RippleEffect.pyx":11
+ * from libc.math cimport fmax
  * 
  * cdef double dampening = 0.9             # <<<<<<<<<<<<<<
  * 
@@ -21928,28 +21931,28 @@ static int __pyx_pymod_exec_RippleEffect(PyObject *__pyx_pyinit_module)
  */
   __pyx_v_12RippleEffect_dampening = 0.9;
 
-  /* "RippleEffect.pyx":20
+  /* "RippleEffect.pyx":21
  * # This method loop over all the pixels.
  * 
  * def new_(cols_: int, rows_:int, previous: ndarray, current: ndarray,             # <<<<<<<<<<<<<<
  *          texture_array: ndarray, background_array: ndarray):
  *     """
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_12RippleEffect_1new_, NULL, __pyx_n_s_RippleEffect); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_12RippleEffect_1new_, NULL, __pyx_n_s_RippleEffect); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_new_2, __pyx_t_2) < 0) __PYX_ERR(0, 20, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_new_2, __pyx_t_2) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "RippleEffect.pyx":139
+  /* "RippleEffect.pyx":138
  * # over all pixels to apply background deformation.
  * 
  * def new__(cols_: int, rows_: int, previous: ndarray, current: ndarray,             # <<<<<<<<<<<<<<
  *           texture_array: ndarray, background_array: ndarray):
  *     """
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_12RippleEffect_3new__, NULL, __pyx_n_s_RippleEffect); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_12RippleEffect_3new__, NULL, __pyx_n_s_RippleEffect); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_new_3, __pyx_t_2) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_new_3, __pyx_t_2) < 0) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "RippleEffect.pyx":1

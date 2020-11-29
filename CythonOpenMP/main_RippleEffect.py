@@ -38,6 +38,13 @@ if __name__ == '__main__':
 
     texture_array = pygame.surfarray.array3d(texture)
     back_array = pygame.surfarray.array3d(background)
+    WaterSplash = pygame.mixer.Sound("SplashSound.ogg")
+    WaterSplash1 = pygame.mixer.Sound("SplashSound1.ogg")
+    WaterSplash2 = pygame.mixer.Sound("SplashSound2.ogg")
+    Splashes = [WaterSplash1, WaterSplash2]
+    old_mouse_pos = pygame.math.Vector2(pygame.mouse.get_pos())
+
+    ch = pygame.mixer.Channel(1)
 
     while not STOP_GAME:
 
@@ -50,7 +57,25 @@ if __name__ == '__main__':
             if event.type == pygame.MOUSEMOTION:
                 mouse_pos = pygame.math.Vector2(pygame.mouse.get_pos())
 
+                if (old_mouse_pos - mouse_pos).length() > 35.0:
+                    if not ch.get_busy():
+                        s = WaterSplash
+                        ch.play(s, fade_ms=100)
+                        s.set_volume(1.0)
+                    else:
+
+                        pygame.mixer.stop()
+                        s = WaterSplash
+                        ch.play(s, fade_ms=300)
+                        s.set_volume(0.7)
+                else:
+                    if not ch.get_busy():
+                        s = Splashes[random.randint(0, 1)]
+                        ch.play(s, fade_ms=200)
+                        s.set_volume(0.5)
+
                 previous[int(mouse_pos.x % width), int(mouse_pos.y % height)] = 8192
+                old_mouse_pos = mouse_pos
 
         if keys[pygame.K_ESCAPE]:
             STOP_GAME = True
@@ -72,9 +97,11 @@ if __name__ == '__main__':
         #            new__(height, width, previous, current, texture_array, back_array)
 
         SCREEN.blit(pygame.surfarray.make_surface(back_array).convert(), (0, 0))
-
+        # surf=pygame.image.frombuffer(numpy.ascontiguousarray(back_array.transpose(1, 0, 2)), (width, height), 'RGB')
+        # surf.set_colorkey((0, 0, 0, 0), pygame.RLEACCEL)
+        # SCREEN.blit(surf, (0, 0))
         pygame.display.flip()
         FRAME += 1
         TIME_PASSED_SECONDS = clock.tick(500)
-        print(clock.get_fps())
+        # print(clock.get_fps())
     pygame.quit()

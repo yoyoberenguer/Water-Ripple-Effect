@@ -6,6 +6,7 @@ from numpy import ndarray, asarray, empty_like, dstack, putmask, float32, roll
 cimport cython
 cimport numpy as np
 from cython.parallel cimport prange
+from libc.math cimport fmax
 
 cdef double dampening = 0.9
 
@@ -52,13 +53,12 @@ cdef inline new_c(int cols_, int rows_,
         int cols_1 = cols_ - 1
         int rows_1 = rows_ - 1
         float data
-        float [:, :] temp
         float c1 = 1.0 / 1024.0
     
     # from 1 to w - 1 to avoid python wraparound error
     # same for j (1 to h - 1)
     with nogil:
-        for j in prange(1, cols_1):  # , schedule='static', chunksize=30):
+        for j in prange(1, cols_1, schedule='static', num_threads=8):
             for i in range(1, rows_1):
 
                 data = (previous[i + 1, j] + previous[i - 1, j] +
@@ -67,7 +67,6 @@ cdef inline new_c(int cols_, int rows_,
                 data -= data * 0.03125
                 current[i, j] = data
                 data = 1 - data * c1
-
                 a = max(<int>(((i - rows2) * data) + rows2) % rows_, 0)
                 b = max(<int>(((j - cols2) * data) + cols2) % cols_, 0)
                 background_array[i, j, 0], background_array[i, j, 1], background_array[i, j, 2] = \
