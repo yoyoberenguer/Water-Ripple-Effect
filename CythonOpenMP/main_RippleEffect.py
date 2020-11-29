@@ -38,9 +38,9 @@ if __name__ == '__main__':
 
     texture_array = pygame.surfarray.array3d(texture)
     back_array = pygame.surfarray.array3d(background)
-    WaterSplash = pygame.mixer.Sound("SplashSound.ogg")
-    WaterSplash1 = pygame.mixer.Sound("SplashSound1.ogg")
-    WaterSplash2 = pygame.mixer.Sound("SplashSound2.ogg")
+    WaterSplash = pygame.mixer.Sound("SplashSound.wav")
+    WaterSplash1 = pygame.mixer.Sound("SplashSound1.wav")
+    WaterSplash2 = pygame.mixer.Sound("SplashSound2.wav")
     Splashes = [WaterSplash1, WaterSplash2]
     old_mouse_pos = pygame.math.Vector2(pygame.mouse.get_pos())
 
