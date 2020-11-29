@@ -45,6 +45,13 @@ if __name__ == '__main__':
     #                    'from __main__ import ripple_3, previous, current', number=1000))
     # print(timeit.timeit('ripple_4(previous, current)',
     #                    'from __main__ import ripple_4, previous, current', number=1000))
+    WaterSplash = pygame.mixer.Sound("SplashSound.ogg")
+    WaterSplash1 = pygame.mixer.Sound("SplashSound1.ogg")
+    WaterSplash2 = pygame.mixer.Sound("SplashSound2.ogg")
+    Splashes = [WaterSplash1, WaterSplash2]
+    old_mouse_pos = pygame.math.Vector2(pygame.mouse.get_pos())
+
+    ch = pygame.mixer.Channel(1)
 
     while not STOP_GAME:
 
@@ -52,9 +59,28 @@ if __name__ == '__main__':
 
         for event in pygame.event.get():
 
-            if event.type == pygame.MOUSEMOTION:  # pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEMOTION:
                 mouse_pos = pygame.math.Vector2(pygame.mouse.get_pos())
-                # current[int(mouse_pos.x), int(mouse_pos.y)] = 5000
+
+                if (old_mouse_pos - mouse_pos).length() > 35.0:
+                    if not ch.get_busy():
+                        s = WaterSplash
+                        ch.play(s, fade_ms=100)
+                        s.set_volume(1.0)
+                    else:
+
+                        pygame.mixer.stop()
+                        s = WaterSplash
+                        ch.play(s, fade_ms=300)
+                        s.set_volume(0.7)
+                else:
+                    if not ch.get_busy():
+                        s = Splashes[random.randint(0, 1)]
+                        ch.play(s, fade_ms=200)
+                        s.set_volume(0.5)
+
+                # previous[int(mouse_pos.x % width), int(mouse_pos.y % height)] = 8192
+                old_mouse_pos = mouse_pos
                 previous[int(mouse_pos.x), int(mouse_pos.y)] = 5000
 
         if keys[pygame.K_ESCAPE]:
