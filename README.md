@@ -5,6 +5,7 @@
 Install the program using RippleEffect.exe
 ```
 
+## Methods
 ```
 This page contains 3 different rendering methods.
 
