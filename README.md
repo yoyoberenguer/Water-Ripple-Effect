@@ -1,5 +1,10 @@
 # Water ripple effect and seabed distortion
 
+## New version
+```
+Install the program using RippleEffect.exe
+```
+
 ```
 This page contains 3 different rendering methods.
 
