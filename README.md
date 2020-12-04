@@ -2,7 +2,7 @@
 
 ## New version
 ```
-Install the program using RippleEffect.exe
+Install the program using setup_RippleEffect.exe
 Move your mouse cursor to create wavelets and sound effects.
 ```
 
