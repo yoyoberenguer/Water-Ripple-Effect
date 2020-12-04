@@ -17,7 +17,10 @@ cdef double dampening = 0.9
 # distorted by the water effect
 # 
 # This method loop over all the pixels.
-
+@cython.boundscheck(False)
+@cython.wraparound(False)
+@cython.nonecheck(False)
+@cython.cdivision(True)
 def new_(cols_: int, rows_:int, previous: ndarray, current: ndarray,
          texture_array: ndarray, background_array: ndarray):
     """
@@ -134,7 +137,10 @@ cdef shift_horiz_neg(float [:, :] arr, int num):
 # 
 # This method apply first the blur to all pixels using numpy array and loop
 # over all pixels to apply background deformation.
-
+@cython.boundscheck(False)
+@cython.wraparound(False)
+@cython.nonecheck(False)
+@cython.cdivision(True)
 def new__(cols_: int, rows_: int, previous: ndarray, current: ndarray,
           texture_array: ndarray, background_array: ndarray):
     """

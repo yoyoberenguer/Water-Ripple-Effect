@@ -1,0 +1,63 @@
+# -*- mode: python -*-
+
+block_cipher = None
+
+added_files = [
+    ('SplashSound.wav', '.'),
+    ('SplashSound1.wav', '.'),
+    ('SplashSound2.wav', '.'),
+    ('background.jpg', '.' ),
+]
+
+def Datafiles(*filenames, **kw):
+    import os
+
+    def datafile(path, strip_path=True):
+        parts = path.split('/')
+        path = name = os.path.join(*parts)
+        if strip_path:
+            name = os.path.basename(path)
+        return name, path, 'DATA'
+
+    strip_path = kw.get('strip_path', True)
+    return TOC(
+        datafile(filename, strip_path=strip_path)
+        for filename in filenames
+        if os.path.isfile(filename))
+
+docfiles = Datafiles('SplashSound.wav', 'SplashSound1.wav', 'SplashSound2.wav', 'background.jpg')
+# dbfile = Datafiles('db/countries.db', strip_path=False) # keep the path of this file
+# ... and add the collected files to the COLLECT() call:
+
+
+
+a = Analysis(['main_rippleEffect.py'],
+             pathex=['C:\\Users\\yoann\\PycharmProjects\\RippleEffect\\CythonOpenMP'],
+             binaries=[],
+             datas=added_files,
+             hiddenimports=[],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          name='main_rippleEffect',
+          debug=False,
+          strip=False,
+          upx=True,
+          runtime_tmpdir=None,
+          console=True )
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               docfiles,
+               name=os.path.join('dist', 'package'))
