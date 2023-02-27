@@ -1,5 +1,9 @@
 # Water ripple effect and seabed distortion
 
+<p align="center">
+    <img src="https://github.com/yoyoberenguer/Water-Ripple-Effect/blob/master/ripples.gif?raw=true">
+</p>
+
 ## New version
 ```
 Install the program using setup_RippleEffect.exe
