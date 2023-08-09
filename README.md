@@ -12,7 +12,7 @@ PS refers to the dependencies section (CUDA must be installed).
 </p>
 
 ## Demo 
-For a full demo, please click on the new release version 1.0.2 as shown below
+For a full CPU demo, please click on the new release version 1.0.2 as shown below
 <p align="left">
     <img src="https://github.com/yoyoberenguer/Water-Ripple-Effect/blob/master/Assets/Capture2.PNG?raw=true">
 </p>
