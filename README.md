@@ -17,8 +17,8 @@ For a full demo, please click on the new release version 1.0.2 as shown below
     <img src="https://github.com/yoyoberenguer/Water-Ripple-Effect/blob/master/Assets/Capture2.PNG?raw=true">
 </p>
 
-Click on the executable setup_RippleEffect.exe to download the setup file and run it onto your machine, 
-The installation process might be flagged as unsafe by you anti-virus. 
+Click on the executable setup_RippleEffect.exe to download the installer and run it onto your machine, 
+The installation process might be flagged as unsafe by your anti-virus. 
 
 <p align="left">
     <img src="https://github.com/yoyoberenguer/Water-Ripple-Effect/blob/master/Assets/Capture1.PNG?raw=true">
