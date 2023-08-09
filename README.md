@@ -1,6 +1,6 @@
 # Water ripple effect and seabed distortion
 
-Below GIF is made with PygameShader (GPU shader ==> wave_gpu method). Wave_gpu method is the cython method developped in this
+Below GIF made with PygameShader (GPU shader ==> wave_gpu method). Wave_gpu method is the cython method developped in this
 github page ported to CUDA for higher resolutions and better perforamces.
 For a full demo install PygameShader and run the demo PygameShader/Demo/GPU_demo_ripple.py 
 
