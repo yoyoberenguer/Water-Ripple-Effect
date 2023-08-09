@@ -28,7 +28,7 @@ The installation process might be flagged as unsafe by your anti-virus.
 ## New version
 
 The most recent versions of the below algorithms are now integrated within the project PygameShader, 
-and will be updated from from that project only.
+and will be updated from that project only.
 - Water ripple effect and seabed distortion (GPU)
 - Surface water ripple effect (CPU method)
 
