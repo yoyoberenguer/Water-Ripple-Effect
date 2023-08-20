@@ -1,10 +1,10 @@
 # Water ripple effect and seabed distortion
 
-Below GIF made with PygameShader (GPU shader ==> wave_gpu method). Wave_gpu method is the cython method developped in this
+Below GIF made with library PygameShader (GPU shader ==> wave_gpu method). Wave_gpu method is the cython method developped in this
 github page ported to CUDA for higher resolutions and better perforamces.
-For a full demo install PygameShader and run the demo PygameShader/Demo/GPU_demo_ripple.py 
+For a full GPU demo install PygameShader(*) and run the demo PygameShader/Demo/GPU_demo_ripple.py 
 
-PS refers to the dependencies section (CUDA must be installed). 
+(*) refers to the dependencies section (CUDA must be installed). 
 
 
 <p align="center">
@@ -12,7 +12,7 @@ PS refers to the dependencies section (CUDA must be installed).
 </p>
 
 ## Demo 
-For a full CPU demo, please click on the new release version 1.0.2 as shown below
+This github page host the full CPU demo, please click on the new release version 1.0.2 as shown below
 <p align="left">
     <img src="https://github.com/yoyoberenguer/Water-Ripple-Effect/blob/master/Assets/Capture2.PNG?raw=true">
 </p>
@@ -25,7 +25,7 @@ The installation process might be flagged as unsafe by your anti-virus.
 </p>
 
 
-## New version
+## Newest version
 
 The most recent versions of the below algorithms are now integrated within the project PygameShader, 
 and will be updated from that project only.
@@ -33,7 +33,7 @@ and will be updated from that project only.
 - Surface water ripple effect (CPU method)
 
 
-## Methods
+## Various python/cython methods
 
 This github page contains 3 different rendering methods.
 
@@ -104,5 +104,3 @@ When python has been compiled, run the program main_RippleEffect.py from your fa
 Or run the demo executable where the fodler Asset has been copied:
 C:\>demo.exe
 
-
-![alt text](https://github.com/yoyoberenguer/Water-Ripple-Effect/blob/master/sc3.png) 
