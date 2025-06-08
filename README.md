@@ -33,44 +33,53 @@ and will be updated from that project only.
 - Surface water ripple effect (CPU method)
 
 
-## Various python/cython methods
+## Pure Python (Compatible with Python 3.6 – 3.9)
 
-This github page contains 3 different rendering methods.
+This section describes two techniques for performing a blur effect using pure Python. These implementations are educational and prototypical in nature, and not optimized for high-performance real-time rendering.
 
-1) Pure Python 
-2) Cython Version 
-3) OpenMP Version (Multi-processing)
+---
 
+### Iterative Method
 
-## Pure Python ver 3.6 - 3.9
+**Overview**  
+This approach loops through each pixel of an image (of dimensions `width × height`) and applies a blur effect by averaging the values of neighboring pixels.
 
-In the pure python method I am using two different techniques
+**How It Works**  
+- Each pixel is visited individually.
+- Neighboring pixels are accessed directly using nested loops.
+- The result is stored in a new image or buffer.
 
-1. Iterating method 
+**Performance**  
+- **Very slow**, especially for large images.
+- **Not suitable** for real-time rendering above **100×100 pixels**.
+- Slight speed improvements may occur in **Python 3.11+** due to interpreter optimizations.
 
-   Description : Iterating over all pixels values width x height and performing a blur on 
-   adjacent pixels  
-   performance result: Slow method and not usable for real time rendering for screen 
-   resolution above 100 x 100 pixels!. Python version 3.11 might provide better performances
+---
 
-2. Numpy arrays
+### NumPy-Based Method
 
-   Description : Instead of going through all the pixels inside a loop and applying 
-   a blur for each pixels, the technique is to call separately the method numpy.roll for every 
-   directions (up, down, left, right) and sum all 4 numpy arrays. This provides the
-   equivalent of blur effect for each pixels in only 4 operations. 
+**Overview**  
+This method uses **NumPy**'s `roll()` function to simulate directional blurring, eliminating the need for nested loops. This results in a highly vectorized and much faster computation.
+
+**Concept**  
+Each directional blur is calculated using a roll operation along a specific axis, and the resulting arrays are summed to simulate a convolution-like effect:
+
+| Convolution Direction | Pixel Offset | NumPy Operation                     |
+|------------------------|--------------|-------------------------------------|
+| Down                  | (x, y + 1)   | `np.roll(array, +1, axis=0)`        |
+| Up                    | (x, y - 1)   | `np.roll(array, -1, axis=0)`        |
+| Left                  | (x + 1, y)   | `np.roll(array, -1, axis=1)`        |
+| Right                 | (x - 1, y)   | `np.roll(array, +1, axis=1)`        |
+
+You can sum these shifted arrays along with the original to produce a blur effect. Optionally, divide by the number of terms to average.
+
+**Performance**  
+- **Approximately 300× faster** than the pure Python loop.
+- Still **not ideal** for real-time use with large resolutions.
+
+---
+
    
-   pixels             | numpy                            |   convolution direction 
-   -------------------|----------------------------------|------------------------
-   (x, y + 1)         | numpy.roll(previous, +1, axis=0) |    down pass
-   (x, y - 1)         | numpy.roll(previous, -1, axis=0) |    up pass
-   (x + 1, y)         | numpy.roll(previous, -1, axis=1) |    left pass
-   (x - 1, y)         | numpy.roll(previous, +1, axis=1) |    right pass
-
-   performance Result : Using numpy array is 300 times faster than the pure python version, however this
-   method is still not adequate for a real time rendering.  
-   
-
 
 ## Cython and OpenMP rendering     
 
